@@ -25,7 +25,7 @@ class PubgCompre extends ActiveRecord
      */
     public static function tableName()
     {
-        return '{{%Pubg_Compre}}';
+        return '{{%pubg_compre}}';
     }
 
     /**

@@ -1,0 +1,5 @@
+var page  = require('webpage').create();
+page.open ('{{ input.getUrl() }}', '{{ input.getMethod() }}', '{{ input.getBody() }}', function (status) {
+//你的js脚本
+    phantom.exit(1);//退出
+});
