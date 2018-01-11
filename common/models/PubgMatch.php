@@ -50,5 +50,10 @@ class PubgMatch extends ActiveRecord
         ];
     }
 
+    public function getAccount()
+    {
+        return $this->hasOne(PubgCompre::className(), ['id' => 'uid']);
+    }
+
 
 }
