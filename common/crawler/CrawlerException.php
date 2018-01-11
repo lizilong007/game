@@ -6,7 +6,7 @@ use yii\web\ServerErrorHttpException;
 class CrawlerException extends ServerErrorHttpException {
 
     const CRAWLER_NOT_FOUND_CONTENT =   1000;
-    const CRAWLER_NOT_FOUND_RANK =   1000;
+    const CRAWLER_NOT_FOUND_RANK =   1001;
 
     public function __construct($code = 0, $message = null, \Exception $previous = null)
     {
