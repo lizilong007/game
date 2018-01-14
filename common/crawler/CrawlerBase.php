@@ -7,6 +7,19 @@ use JonnyW\PhantomJs\DependencyInjection\ServiceContainer;
 
 class CrawlerBase
 {
+    const PUBG = 1;
+    const LOL = 2;
+    const DOTA2 = 3;
+    const CSGO = 4;
+    const D3 = 5;
+
+    public static $games = [
+        CrawlerBase::PUBG => '绝地求生',
+        CrawlerBase::LOL => '英雄联盟',
+        CrawlerBase::DOTA2 => 'DOTA2',
+        CrawlerBase::CSGO => 'CS GO',
+        CrawlerBase::D3 => '暗黑破坏神3',
+    ];
 
     public function getContent($url, $isPhantom = false, $procedureName = '')
     {
@@ -63,8 +76,19 @@ class CrawlerBase
             $response->getConsole();//返回JS控制台内容
         }
         $client = new \GuzzleHttp\Client();
+        $jar = new \GuzzleHttp\Cookie\CookieJar();
         try {
-            $res = $client->request('GET', $url);
+            $res = $client->request('GET', $url, [
+                    'cookies' => $jar,
+                    'headers' => [
+                        'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
+                        'accept-encoding' => 'gzip, deflate, br',
+                        'accept-language' => 'zh-CN,zh;q=0.9,en;q=0.8',
+                        'cache-control' => 'max-age=0',
+                        'upgrade-insecure-requests' => '1',
+                        'user-agent' => 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/63.0.3239.132 Safari/537.36'
+                    ]
+                ]);
 
             if ($res->getStatusCode() == 200) {
                 return (String)$res->getBody();

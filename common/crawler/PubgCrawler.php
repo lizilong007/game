@@ -1,7 +1,7 @@
 <?php
 namespace common\crawler;
 
-error_reporting(ERROR_ALL);
+error_reporting(0);
 
 use Symfony\Component\DomCrawler\Crawler;
 
@@ -38,7 +38,7 @@ class PubgCrawler extends CrawlerBase implements CrawlerInterface {
 
         $crawler = new Crawler($content);
 
-        $compreData = $this->getCompre($crawler);
+        $compreData = $this->getCompre($account, $crawler);
 
         $account->setAttributes($compreData, false);
         $account->updated_at = $time;
@@ -142,13 +142,12 @@ class PubgCrawler extends CrawlerBase implements CrawlerInterface {
 
     }
 
-    private function getCompre($crawler) {
+    private function getCompre($account, $crawler) {
 
         $data = [];
-
         // 服务器名字 .game-server__item--on .sp__server
         $data['serverName'] = trim($crawler->filter('.game-server__item--on .sp__server')->first()->text());
-        $data['server'] = trim(str_replace('https://pubg.op.gg/user/beckerr?server=', '', trim($crawler->filter('.game-server__item--on a[data-selector=ch-server]')->first()->attr('href'))));
+        $data['server'] = trim(str_replace('https://pubg.op.gg/user/' . $account->name . '?server=', '', trim($crawler->filter('.game-server__item--on a[data-selector=ch-server]')->first()->attr('href'))));
         // 场数 .game-server__item--on .game-server__play-count
         list($data['total_num'], ) = preg_split("/\W+/", trim($crawler->filter('.game-server__item--on .game-server__play-count')->first()->text()));
         $data['user_id'] = trim($crawler->filter('#userNickname')->first()->attr('data-user_id'));

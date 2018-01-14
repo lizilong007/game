@@ -1,7 +1,7 @@
 <?php
 namespace common\crawler;
 
-error_reporting(ERROR_ALL);
+error_reporting(0);
 
 use common\helper\NumberHelper;
 
@@ -12,6 +12,21 @@ class LolCrawler extends CrawlerBase implements CrawlerInterface {
     public function make($name) {
 
 
+    }
+
+    public function search($name)
+    {
+        return json_decode($this->getContent($this->searchUrl($name)), true);
+    }
+
+    public function matchList($accountId)
+    {
+        return json_decode($this->getContent($this->matchListUrl($accountId)), true);
+    }
+
+    public function matchDetail($accountId, $matchId)
+    {
+        return json_decode($this->getContent($this->matchDetailUrl($accountId, $matchId)), true);
     }
 
 

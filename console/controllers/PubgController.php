@@ -16,7 +16,7 @@ class PubgController extends Controller
 
         $crawler = new PubgCrawler;
 
-        var_dump($crawler->make('beckerr'));die;
+        var_dump($crawler->make('BABABABA1'));die;
 
     }
 
