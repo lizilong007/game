@@ -1,0 +1,1359 @@
+
+<!doctype html>
+<html lang="en">
+<head>            <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <title>美美的牛小牛 #89Y8RVLY | Card Collection | Player Profile | Clash Royale API</title>
+        <!-- Favicon -->
+        <script type="text/javascript">
+//<![CDATA[
+window.__cfRocketOptions = {byc:0,p:0,petok:"630484cb93dde57362a16c5ea085163abefd69c0-1516233390-1800"};
+//]]>
+</script>
+<script type="text/javascript" src="https://ajax.cloudflare.com/cdn-cgi/scripts/b7ef205d/cloudflare-static/rocket.min.js"></script>
+<link rel="apple-touch-icon" sizes="180x180" href="/static/img/favicon/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/static/img/favicon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/static/img/favicon/favicon-16x16.png">
+        <link rel="manifest" href="/static/img/favicon/manifest.json">
+        <link rel="mask-icon" href="/static/img/favicon/safari-pinned-tab.svg" color="#5bbad5">
+        <link rel="shortcut icon" href="/static/img/favicon/favicon.ico">
+        <meta name="msapplication-config" content="/static/img/favicon/browserconfig.xml">
+        <meta name="theme-color" content="#ffffff">
+        <!-- End: Favicon -->
+        <!-- Rich Link Preview -->
+        <meta name="title" content="美美的牛小牛 #89Y8RVLY | Card Collection | Player Profile | Clash Royale API">
+        <meta name="description" content="Clash Royale Public API">
+        <meta name="keywords" content="Clash Royale, API, games, mobile, CR, cr-api, Clash Royale API">
+        <meta property="og:title" content="美美的牛小牛 #89Y8RVLY | Card Collection | Player Profile | Clash Royale API">
+        <meta property="og:type" content="website">
+        <meta property="og:description" content="Clash Royale Public API">
+        <meta property="og:image" content="http://cr-api.com/static/img/branding/cr-api-logo.png">
+        <meta property="og:site_name" content="Clash Royale Public API">
+        <!-- End: Rich Link Preview -->
+        <link rel="stylesheet" type="text/css"
+              href="/static/semantic/dist/semantic.min.css?1516230560"/>
+        <link rel="stylesheet" type="text/css" href="/static/css/app.css?1516230560"/>
+
+    <!-- Google Analytics -->
+    <script type="text/rocketscript">
+    window.ga = window.ga || function () {
+        (ga.q = ga.q || []).push(arguments)
+    };
+    ga.l = +new Date;
+    ga('create', 'UA-100687612-4', 'auto');
+    ga('send', 'pageview');
+    </script>
+    <script async data-rocketsrc="https://www.google-analytics.com/analytics.js" type="text/rocketscript"></script>
+    <!-- End Google Analytics -->
+    <!-- Iframe block -->
+    <script type="text/rocketscript">
+    if (window.self !== window.top) {
+        window.top.location.href = window.location.href;
+    }
+    </script>
+    <script
+            data-cfasync="false"
+            src="https://code.jquery.com/jquery-3.1.1.min.js"
+            integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+            crossorigin="anonymous"></script>
+
+</head>
+<body class="">
+<!-- Sidebar -->
+
+    <div class="ui vertical accordion inverted sidebar menu right" id="toc" style="">
+        <div class="brand header item">
+            <a class="ui logo mini image" href="/">
+                <img src="/static/img/branding/cr-api-logo.png" style="padding-right: 0.7rem;"/>
+            </a>
+            <a href="/">Clash Royale API</a>
+        </div>
+        <a class="item" href="/">Home</a>
+        <div class="item">
+            <a class="title">
+                <i class="dropdown icon"></i>
+                Players
+            </a>
+            <div class="content">
+                <a class="item" href="/player">Overview</a>
+                <a class="item" href="/players/pro">Professionals</a>
+                <a class="item" href="/players/leaderboard">Leaderboard</a>
+                <div class="item">
+                    <form id="sidebar_player_search_form" class="ui fluid form" action="/player">
+                        <div class="ui transparent inverted icon input">
+                            <i class="search link icon"></i>
+                            <input id="sidebar-player-search" name="tag" type="text" class="prompt" placeholder="Tag…">
+                        </div>
+                            <div class="ui error message pointing label">
+        Please enter a value
+    </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <a class="title">
+                <i class="dropdown icon"></i>
+                Clans
+            </a>
+            <div class="content">
+                <a class="item" href="/clans">Overview</a>
+                <a class="item" href="/clans">Families</a>
+                <a class="item" href="/clans/leaderboard">Leaderboard</a>
+                <div class="item">
+                    <form id="sidebar_clan_search_form" class="ui fluid form" action="/clan">
+                        <div class="ui transparent inverted icon input">
+                            <input id="sidebar-clan-search" name="tag" type="text" placeholder="Tag…">
+                            <i class="search link icon"></i>
+                        </div>
+                            <div class="ui error message pointing label">
+        Please enter a value
+    </div>
+
+                    </form>
+                </div>
+                <div class="item">
+                    <form id="sidebar_clan_name_search_form" class="ui fluid form" action="/clans/search">
+                        <div class="ui transparent inverted icon input">
+                            <input id="sidebar-clan-name-search" name="name" type="text" placeholder="Name…">
+                            <i class="search link icon"></i>
+                        </div>
+                            <div class="ui error message pointing label">
+        Please enter a value
+    </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <a class="title">
+                <i class="dropdown icon"></i>
+                Decks
+            </a>
+            <div class="content">
+                <a class="item" href="/decks">Overview</a>
+                <a class="item" href="/decks/popular">Popular</a>
+                <a class="item" href="/decks/leaderboard">Leaderboard Decks</a>
+                <a class="item" href="/decks/search">Search</a>
+            </div>
+        </div>
+        <div class="item">
+            <a class="title">
+                <i class="dropdown icon"></i>
+                Cards
+            </a>
+            <div class="content">
+                <a class="item" href="/cards/popular">Popular</a>
+                <a class="item" href="/cards/trends">Trends</a>
+            </div>
+        </div>
+        <div class="item">
+            <a class="title">
+                <i class="dropdown icon"></i>
+                Tournaments
+            </a>
+            <div class="content">
+                <a class="item" href="/tournaments">Overview</a>
+                <div class="item">
+                    <form id="sidebar_tournament_search_form" class="ui fluid form" action="/tournament">
+                        <div class="ui transparent inverted icon input">
+                            <input id="sidebar-tournament-search" name="tag" type="text" placeholder="Tag…">
+                            <i class="search link icon"></i>
+                        </div>
+                            <div class="ui error message pointing label">
+        Please enter a value
+    </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <a class="title">
+                <i class="dropdown icon"></i>
+                Help
+            </a>
+            <div class="content">
+                <a class="item" href="http://docs.cr-api.com">
+                    Documentation
+                </a>
+                <a class="item" href="https://github.com/cr-api/cr-api">
+                    Support
+                </a>
+            </div>
+        </div>
+        <div class="item">
+            <a class="title">
+                <i class="dropdown icon"></i>
+                Social
+            </a>
+            <div class="content">
+                <a class="item" href="https://github.com/cr-api/cr-api">
+                    <i class="github icon"></i>
+                    Github
+                </a>
+                <a class="item" href="https://discord.me/cr_api">
+                    Discord
+                </a>
+                <a class="item" href="https://twitter.com/CRPublicAPI">
+                    Twitter
+                </a>
+                <a class="item" href="https://facebook.com/CRPublicAPI">
+                    Facebook
+                </a>
+            </div>
+        </div>
+        <a class="item" href="/#donate">
+            Donate
+        </a>
+    </div>
+
+
+<!-- End Sidebar -->
+<div class="pusher">
+    <!-- always on topnav -->
+    <div class="ui top fixed borderless fluid menu">
+        <a class="brand item header" href="/">
+            <img src="/static/img/branding/cr-api-logo.png" style="padding-right: 0.7rem;"/>
+            <span class="mobile-hide">Clash Royale API</span>
+        </a>
+        <div class="right menu">
+            <a class="mobile-hide nav item" href="/player">
+                Players
+            </a>
+            <a class="mobile-hide nav item" href="/clans">
+                Clans
+            </a>
+            <a class="mobile-hide nav item" href="/decks">
+                Decks
+            </a>
+            <a class="mobile-hide nav item" href="/cards">
+                Cards
+            </a>
+            <a class="mobile-hide nav item" href="/tournaments">
+                Tournaments
+            </a>
+            <div id="top-fave" class="ui dropdown  item">
+                <i class="heart icon"></i>
+                <i class="dropdown icon"></i>
+                <div id="player_saved_menu" class="menu">
+                </div>
+            </div>
+            <div id="sidebar-toggle" class="link item">
+                <i class="content icon"></i>
+            </div>
+        </div>
+
+    </div>
+    <div class="ui hidden divider" style="height:1.1rem;"></div>
+
+    <!-- Page Contents -->
+    <!-- BG -->
+    <div id="player-bg"></div>
+
+
+    <!-- family menu -->
+    <!-- player menu -->
+
+<form id="player_search_attached_form" class="ui fluid form" action="/player">
+    <div class="ui attached lightwash menu">
+        <a class="header item" href="/player">Players</a>
+        <div class="ui search item">
+            <div class="ui transparent icon input">
+                <input id="player_search_input" name="tag" class="prompt" type="text"
+                       placeholder="#89Y8RVLY" style="width:40vw;">
+                <i class="search link icon"></i>
+            </div>
+        </div>
+        <a class="item" href="/players/pro">Pro</a>
+        <a class="item" href="/players/leaderboard">L<span class="mobile-hide">eaderboard</span><span class="mobile-show">B</span></a>
+    </div>
+    <div class="ui error message attached segment" style=" border:none;">
+        Please enter a value
+    </div>
+
+</form>
+
+    <!-- player player -->
+            <!-- Menu -->
+
+
+
+<div class="ui hidden divider"></div>
+<div class="ui container">
+
+
+
+
+
+
+
+
+<div class="ui top attached padded segment">
+    <div class="ui unstackable grid">
+        <div class="thirteen wide column">
+            <h1 class="ui header" style="vertical-align:bottom;">美美的牛小牛</h1>
+            <div class="ui hidden divider"></div>
+            <div class="ui hidden divider"></div>
+            <div class="ui horizontal divided list">
+                <div class="ui header item">
+                            Co-Leader
+                </div>
+                <div class="item">
+                            <a href="/clan/29YY8L89">娱乐至上</a>
+                </div>
+                <div class="item">
+                            #29YY8L89
+                </div>
+            </div>
+        </div>
+        <div class="three wide right column">
+                    <a href="/clan/29YY8L89">
+            <img class="ui floated right image"
+                 src="/static/img/badge/Cherry_Blossom_01.png"/>
+        </a>
+
+        </div>
+    </div>
+
+</div>
+
+<style>
+    @media only screen and (max-width: 767px) {
+        .ui.stackable.grid > .column:not(.row) {
+            padding: 0.3rem !important;
+        }
+    }
+</style>
+    <div class="ui lightwash bottom attached menu">
+        <a class="item " href="/player/89Y8RVLY/">Stats</a>
+        <a class="item active" href="/player/89Y8RVLY/cards">Cards</a>
+        <a class="item " href="/player/89Y8RVLY/battles">Battles</a>
+    </div>
+</div>
+            <!-- Cards -->
+            <div class="ui segment container">
+                <h3 class="ui header">Cards</h3>
+                <div>
+                        <a class="player_card_link" href="/card/ice-spirit">
+                            <div class="player_card">
+                                <img src="/static/img/cards/ice-spirit.png"/>
+                                <div class="ui center aligned cardlevel">Lvl 13</div>
+                                <div class="card_progress_container">
+                                    <div class="card_progress_bg progress_color_red"
+                                         style="width:100%;"></div>
+                                    <div class="ui link card_upgrades">100 / MAX</div>
+                                </div>
+                            </div>
+                        </a>                        <a class="player_card_link" href="/card/skeletons">
+                            <div class="player_card">
+                                <img src="/static/img/cards/skeletons.png"/>
+                                <div class="ui center aligned cardlevel">Lvl 13</div>
+                                <div class="card_progress_container">
+                                    <div class="card_progress_bg progress_color_red"
+                                         style="width:100%;"></div>
+                                    <div class="ui link card_upgrades">100 / MAX</div>
+                                </div>
+                            </div>
+                        </a>                        <a class="player_card_link" href="/card/fire-spirits">
+                            <div class="player_card">
+                                <img src="/static/img/cards/fire-spirits.png"/>
+                                <div class="ui center aligned cardlevel">Lvl 13</div>
+                                <div class="card_progress_container">
+                                    <div class="card_progress_bg progress_color_red"
+                                         style="width:100%;"></div>
+                                    <div class="ui link card_upgrades">100 / MAX</div>
+                                </div>
+                            </div>
+                        </a>                        <a class="player_card_link" href="/card/spear-goblins">
+                            <div class="player_card">
+                                <img src="/static/img/cards/spear-goblins.png"/>
+                                <div class="ui center aligned cardlevel">Lvl 13</div>
+                                <div class="card_progress_container">
+                                    <div class="card_progress_bg progress_color_red"
+                                         style="width:100%;"></div>
+                                    <div class="ui link card_upgrades">100 / MAX</div>
+                                </div>
+                            </div>
+                        </a>                        <a class="player_card_link" href="/card/goblins">
+                            <div class="player_card">
+                                <img src="/static/img/cards/goblins.png"/>
+                                <div class="ui center aligned cardlevel">Lvl 13</div>
+                                <div class="card_progress_container">
+                                    <div class="card_progress_bg progress_color_red"
+                                         style="width:100%;"></div>
+                                    <div class="ui link card_upgrades">100 / MAX</div>
+                                </div>
+                            </div>
+                        </a>                        <a class="player_card_link" href="/card/zap">
+                            <div class="player_card">
+                                <img src="/static/img/cards/zap.png"/>
+                                <div class="ui center aligned cardlevel">Lvl 13</div>
+                                <div class="card_progress_container">
+                                    <div class="card_progress_bg progress_color_red"
+                                         style="width:100%;"></div>
+                                    <div class="ui link card_upgrades">100 / MAX</div>
+                                </div>
+                            </div>
+                        </a>                        <a class="player_card_link" href="/card/bats">
+                            <div class="player_card">
+                                <img src="/static/img/cards/bats.png"/>
+                                <div class="ui center aligned cardlevel">Lvl 13</div>
+                                <div class="card_progress_container">
+                                    <div class="card_progress_bg progress_color_red"
+                                         style="width:100%;"></div>
+                                    <div class="ui link card_upgrades">92 / MAX</div>
+                                </div>
+                            </div>
+                        </a>                        <a class="player_card_link" href="/card/goblin-gang">
+                            <div class="player_card">
+                                <img src="/static/img/cards/goblin-gang.png"/>
+                                <div class="ui center aligned cardlevel">Lvl 13</div>
+                                <div class="card_progress_container">
+                                    <div class="card_progress_bg progress_color_red"
+                                         style="width:100%;"></div>
+                                    <div class="ui link card_upgrades">100 / MAX</div>
+                                </div>
+                            </div>
+                        </a>                        <a class="player_card_link" href="/card/knight">
+                            <div class="player_card">
+                                <img src="/static/img/cards/knight.png"/>
+                                <div class="ui center aligned cardlevel">Lvl 13</div>
+                                <div class="card_progress_container">
+                                    <div class="card_progress_bg progress_color_red"
+                                         style="width:100%;"></div>
+                                    <div class="ui link card_upgrades">100 / MAX</div>
+                                </div>
+                            </div>
+                        </a>                        <a class="player_card_link" href="/card/bomber">
+                            <div class="player_card">
+                                <img src="/static/img/cards/bomber.png"/>
+                                <div class="ui center aligned cardlevel">Lvl 13</div>
+                                <div class="card_progress_container">
+                                    <div class="card_progress_bg progress_color_red"
+                                         style="width:100%;"></div>
+                                    <div class="ui link card_upgrades">100 / MAX</div>
+                                </div>
+                            </div>
+                        </a>                        <a class="player_card_link" href="/card/skeleton-barrel">
+                            <div class="player_card">
+                                <img src="/static/img/cards/skeleton-barrel.png"/>
+                                <div class="ui center aligned cardlevel">Lvl 13</div>
+                                <div class="card_progress_container">
+                                    <div class="card_progress_bg progress_color_red"
+                                         style="width:100%;"></div>
+                                    <div class="ui link card_upgrades">72 / MAX</div>
+                                </div>
+                            </div>
+                        </a>                        <a class="player_card_link" href="/card/archers">
+                            <div class="player_card">
+                                <img src="/static/img/cards/archers.png"/>
+                                <div class="ui center aligned cardlevel">Lvl 13</div>
+                                <div class="card_progress_container">
+                                    <div class="card_progress_bg progress_color_red"
+                                         style="width:100%;"></div>
+                                    <div class="ui link card_upgrades">100 / MAX</div>
+                                </div>
+                            </div>
+                        </a>                        <a class="player_card_link" href="/card/minions">
+                            <div class="player_card">
+                                <img src="/static/img/cards/minions.png"/>
+                                <div class="ui center aligned cardlevel">Lvl 13</div>
+                                <div class="card_progress_container">
+                                    <div class="card_progress_bg progress_color_red"
+                                         style="width:100%;"></div>
+                                    <div class="ui link card_upgrades">100 / MAX</div>
+                                </div>
+                            </div>
+                        </a>                        <a class="player_card_link" href="/card/arrows">
+                            <div class="player_card">
+                                <img src="/static/img/cards/arrows.png"/>
+                                <div class="ui center aligned cardlevel">Lvl 13</div>
+                                <div class="card_progress_container">
+                                    <div class="card_progress_bg progress_color_red"
+                                         style="width:100%;"></div>
+                                    <div class="ui link card_upgrades">100 / MAX</div>
+                                </div>
+                            </div>
+                        </a>                        <a class="player_card_link" href="/card/cannon">
+                            <div class="player_card">
+                                <img src="/static/img/cards/cannon.png"/>
+                                <div class="ui center aligned cardlevel">Lvl 13</div>
+                                <div class="card_progress_container">
+                                    <div class="card_progress_bg progress_color_red"
+                                         style="width:100%;"></div>
+                                    <div class="ui link card_upgrades">100 / MAX</div>
+                                </div>
+                            </div>
+                        </a>                        <a class="player_card_link" href="/card/mortar">
+                            <div class="player_card">
+                                <img src="/static/img/cards/mortar.png"/>
+                                <div class="ui center aligned cardlevel">Lvl 13</div>
+                                <div class="card_progress_container">
+                                    <div class="card_progress_bg progress_color_red"
+                                         style="width:100%;"></div>
+                                    <div class="ui link card_upgrades">89 / MAX</div>
+                                </div>
+                            </div>
+                        </a>                        <a class="player_card_link" href="/card/tesla">
+                            <div class="player_card">
+                                <img src="/static/img/cards/tesla.png"/>
+                                <div class="ui center aligned cardlevel">Lvl 13</div>
+                                <div class="card_progress_container">
+                                    <div class="card_progress_bg progress_color_red"
+                                         style="width:100%;"></div>
+                                    <div class="ui link card_upgrades">100 / MAX</div>
+                                </div>
+                            </div>
+                        </a>                        <a class="player_card_link" href="/card/minion-horde">
+                            <div class="player_card">
+                                <img src="/static/img/cards/minion-horde.png"/>
+                                <div class="ui center aligned cardlevel">Lvl 13</div>
+                                <div class="card_progress_container">
+                                    <div class="card_progress_bg progress_color_red"
+                                         style="width:100%;"></div>
+                                    <div class="ui link card_upgrades">100 / MAX</div>
+                                </div>
+                            </div>
+                        </a>                        <a class="player_card_link" href="/card/barbarians">
+                            <div class="player_card">
+                                <img src="/static/img/cards/barbarians.png"/>
+                                <div class="ui center aligned cardlevel">Lvl 13</div>
+                                <div class="card_progress_container">
+                                    <div class="card_progress_bg progress_color_red"
+                                         style="width:100%;"></div>
+                                    <div class="ui link card_upgrades">100 / MAX</div>
+                                </div>
+                            </div>
+                        </a>                        <a class="player_card_link" href="/card/royal-giant">
+                            <div class="player_card">
+                                <img src="/static/img/cards/royal-giant.png"/>
+                                <div class="ui center aligned cardlevel">Lvl 13</div>
+                                <div class="card_progress_container">
+                                    <div class="card_progress_bg progress_color_red"
+                                         style="width:100%;"></div>
+                                    <div class="ui link card_upgrades">100 / MAX</div>
+                                </div>
+                            </div>
+                        </a>                        <a class="player_card_link" href="/card/elite-barbarians">
+                            <div class="player_card">
+                                <img src="/static/img/cards/elite-barbarians.png"/>
+                                <div class="ui center aligned cardlevel">Lvl 13</div>
+                                <div class="card_progress_container">
+                                    <div class="card_progress_bg progress_color_red"
+                                         style="width:100%;"></div>
+                                    <div class="ui link card_upgrades">100 / MAX</div>
+                                </div>
+                            </div>
+                        </a>                        <a class="player_card_link" href="/card/ice-golem">
+                            <div class="player_card">
+                                <img src="/static/img/cards/ice-golem.png"/>
+                                <div class="ui center aligned cardlevel">Lvl 11</div>
+                                <div class="card_progress_container">
+                                    <div class="card_progress_bg progress_color_red"
+                                         style="width:100%;"></div>
+                                    <div class="ui link card_upgrades">6 / MAX</div>
+                                </div>
+                            </div>
+                        </a>                        <a class="player_card_link" href="/card/mega-minion">
+                            <div class="player_card">
+                                <img src="/static/img/cards/mega-minion.png"/>
+                                <div class="ui center aligned cardlevel">Lvl 11</div>
+                                <div class="card_progress_container">
+                                    <div class="card_progress_bg progress_color_red"
+                                         style="width:100%;"></div>
+                                    <div class="ui link card_upgrades">1 / MAX</div>
+                                </div>
+                            </div>
+                        </a>                        <a class="player_card_link" href="/card/dart-goblin">
+                            <div class="player_card">
+                                <img src="/static/img/cards/dart-goblin.png"/>
+                                <div class="ui center aligned cardlevel">Lvl 11</div>
+                                <div class="card_progress_container">
+                                    <div class="card_progress_bg progress_color_red"
+                                         style="width:100%;"></div>
+                                    <div class="ui link card_upgrades">10 / MAX</div>
+                                </div>
+                            </div>
+                        </a>                        <a class="player_card_link" href="/card/heal">
+                            <div class="player_card">
+                                <img src="/static/img/cards/heal.png"/>
+                                <div class="ui center aligned cardlevel">Lvl 11</div>
+                                <div class="card_progress_container">
+                                    <div class="card_progress_bg progress_color_red"
+                                         style="width:100%;"></div>
+                                    <div class="ui link card_upgrades">10 / MAX</div>
+                                </div>
+                            </div>
+                        </a>                        <a class="player_card_link" href="/card/tombstone">
+                            <div class="player_card">
+                                <img src="/static/img/cards/tombstone.png"/>
+                                <div class="ui center aligned cardlevel">Lvl 11</div>
+                                <div class="card_progress_container">
+                                    <div class="card_progress_bg progress_color_red"
+                                         style="width:100%;"></div>
+                                    <div class="ui link card_upgrades">6 / MAX</div>
+                                </div>
+                            </div>
+                        </a>                        <a class="player_card_link" href="/card/battle-ram">
+                            <div class="player_card">
+                                <img src="/static/img/cards/battle-ram.png"/>
+                                <div class="ui center aligned cardlevel">Lvl 11</div>
+                                <div class="card_progress_container">
+                                    <div class="card_progress_bg progress_color_red"
+                                         style="width:100%;"></div>
+                                    <div class="ui link card_upgrades">4 / MAX</div>
+                                </div>
+                            </div>
+                        </a>                        <a class="player_card_link" href="/card/flying-machine">
+                            <div class="player_card">
+                                <img src="/static/img/cards/flying-machine.png"/>
+                                <div class="ui center aligned cardlevel">Lvl 11</div>
+                                <div class="card_progress_container">
+                                    <div class="card_progress_bg progress_color_red"
+                                         style="width:100%;"></div>
+                                    <div class="ui link card_upgrades">0 / MAX</div>
+                                </div>
+                            </div>
+                        </a>                        <a class="player_card_link" href="/card/mini-pekka">
+                            <div class="player_card">
+                                <img src="/static/img/cards/mini-pekka.png"/>
+                                <div class="ui center aligned cardlevel">Lvl 11</div>
+                                <div class="card_progress_container">
+                                    <div class="card_progress_bg progress_color_red"
+                                         style="width:100%;"></div>
+                                    <div class="ui link card_upgrades">10 / MAX</div>
+                                </div>
+                            </div>
+                        </a>                        <a class="player_card_link" href="/card/furnace">
+                            <div class="player_card">
+                                <img src="/static/img/cards/furnace.png"/>
+                                <div class="ui center aligned cardlevel">Lvl 11</div>
+                                <div class="card_progress_container">
+                                    <div class="card_progress_bg progress_color_red"
+                                         style="width:100%;"></div>
+                                    <div class="ui link card_upgrades">2 / MAX</div>
+                                </div>
+                            </div>
+                        </a>                        <a class="player_card_link" href="/card/musketeer">
+                            <div class="player_card">
+                                <img src="/static/img/cards/musketeer.png"/>
+                                <div class="ui center aligned cardlevel">Lvl 11</div>
+                                <div class="card_progress_container">
+                                    <div class="card_progress_bg progress_color_red"
+                                         style="width:100%;"></div>
+                                    <div class="ui link card_upgrades">8 / MAX</div>
+                                </div>
+                            </div>
+                        </a>                        <a class="player_card_link" href="/card/valkyrie">
+                            <div class="player_card">
+                                <img src="/static/img/cards/valkyrie.png"/>
+                                <div class="ui center aligned cardlevel">Lvl 11</div>
+                                <div class="card_progress_container">
+                                    <div class="card_progress_bg progress_color_red"
+                                         style="width:100%;"></div>
+                                    <div class="ui link card_upgrades">10 / MAX</div>
+                                </div>
+                            </div>
+                        </a>                        <a class="player_card_link" href="/card/hog-rider">
+                            <div class="player_card">
+                                <img src="/static/img/cards/hog-rider.png"/>
+                                <div class="ui center aligned cardlevel">Lvl 11</div>
+                                <div class="card_progress_container">
+                                    <div class="card_progress_bg progress_color_red"
+                                         style="width:100%;"></div>
+                                    <div class="ui link card_upgrades">7 / MAX</div>
+                                </div>
+                            </div>
+                        </a>                        <a class="player_card_link" href="/card/zappies">
+                            <div class="player_card">
+                                <img src="/static/img/cards/zappies.png"/>
+                                <div class="ui center aligned cardlevel">Lvl 10</div>
+                                <div class="card_progress_container">
+                                    <div class="card_progress_bg progress_color_blue"
+                                         style="width:52.900000000000006%;"></div>
+                                    <div class="ui link card_upgrades">529 / 1,000</div>
+                                </div>
+                            </div>
+                        </a>                        <a class="player_card_link" href="/card/fireball">
+                            <div class="player_card">
+                                <img src="/static/img/cards/fireball.png"/>
+                                <div class="ui center aligned cardlevel">Lvl 11</div>
+                                <div class="card_progress_container">
+                                    <div class="card_progress_bg progress_color_red"
+                                         style="width:100%;"></div>
+                                    <div class="ui link card_upgrades">1 / MAX</div>
+                                </div>
+                            </div>
+                        </a>                        <a class="player_card_link" href="/card/inferno-tower">
+                            <div class="player_card">
+                                <img src="/static/img/cards/inferno-tower.png"/>
+                                <div class="ui center aligned cardlevel">Lvl 11</div>
+                                <div class="card_progress_container">
+                                    <div class="card_progress_bg progress_color_red"
+                                         style="width:100%;"></div>
+                                    <div class="ui link card_upgrades">10 / MAX</div>
+                                </div>
+                            </div>
+                        </a>                        <a class="player_card_link" href="/card/wizard">
+                            <div class="player_card">
+                                <img src="/static/img/cards/wizard.png"/>
+                                <div class="ui center aligned cardlevel">Lvl 11</div>
+                                <div class="card_progress_container">
+                                    <div class="card_progress_bg progress_color_red"
+                                         style="width:100%;"></div>
+                                    <div class="ui link card_upgrades">10 / MAX</div>
+                                </div>
+                            </div>
+                        </a>                        <a class="player_card_link" href="/card/bomb-tower">
+                            <div class="player_card">
+                                <img src="/static/img/cards/bomb-tower.png"/>
+                                <div class="ui center aligned cardlevel">Lvl 11</div>
+                                <div class="card_progress_container">
+                                    <div class="card_progress_bg progress_color_red"
+                                         style="width:100%;"></div>
+                                    <div class="ui link card_upgrades">10 / MAX</div>
+                                </div>
+                            </div>
+                        </a>                        <a class="player_card_link" href="/card/giant">
+                            <div class="player_card">
+                                <img src="/static/img/cards/giant.png"/>
+                                <div class="ui center aligned cardlevel">Lvl 11</div>
+                                <div class="card_progress_container">
+                                    <div class="card_progress_bg progress_color_red"
+                                         style="width:100%;"></div>
+                                    <div class="ui link card_upgrades">7 / MAX</div>
+                                </div>
+                            </div>
+                        </a>                        <a class="player_card_link" href="/card/goblin-hut">
+                            <div class="player_card">
+                                <img src="/static/img/cards/goblin-hut.png"/>
+                                <div class="ui center aligned cardlevel">Lvl 11</div>
+                                <div class="card_progress_container">
+                                    <div class="card_progress_bg progress_color_red"
+                                         style="width:100%;"></div>
+                                    <div class="ui link card_upgrades">9 / MAX</div>
+                                </div>
+                            </div>
+                        </a>                        <a class="player_card_link" href="/card/rocket">
+                            <div class="player_card">
+                                <img src="/static/img/cards/rocket.png"/>
+                                <div class="ui center aligned cardlevel">Lvl 11</div>
+                                <div class="card_progress_container">
+                                    <div class="card_progress_bg progress_color_red"
+                                         style="width:100%;"></div>
+                                    <div class="ui link card_upgrades">9 / MAX</div>
+                                </div>
+                            </div>
+                        </a>                        <a class="player_card_link" href="/card/elixir-collector">
+                            <div class="player_card">
+                                <img src="/static/img/cards/elixir-collector.png"/>
+                                <div class="ui center aligned cardlevel">Lvl 11</div>
+                                <div class="card_progress_container">
+                                    <div class="card_progress_bg progress_color_red"
+                                         style="width:100%;"></div>
+                                    <div class="ui link card_upgrades">10 / MAX</div>
+                                </div>
+                            </div>
+                        </a>                        <a class="player_card_link" href="/card/barbarian-hut">
+                            <div class="player_card">
+                                <img src="/static/img/cards/barbarian-hut.png"/>
+                                <div class="ui center aligned cardlevel">Lvl 11</div>
+                                <div class="card_progress_container">
+                                    <div class="card_progress_bg progress_color_red"
+                                         style="width:100%;"></div>
+                                    <div class="ui link card_upgrades">10 / MAX</div>
+                                </div>
+                            </div>
+                        </a>                        <a class="player_card_link" href="/card/three-musketeers">
+                            <div class="player_card">
+                                <img src="/static/img/cards/three-musketeers.png"/>
+                                <div class="ui center aligned cardlevel">Lvl 11</div>
+                                <div class="card_progress_container">
+                                    <div class="card_progress_bg progress_color_red"
+                                         style="width:100%;"></div>
+                                    <div class="ui link card_upgrades">10 / MAX</div>
+                                </div>
+                            </div>
+                        </a>                        <a class="player_card_link" href="/card/mirror">
+                            <div class="player_card">
+                                <img src="/static/img/cards/mirror.png"/>
+                                <div class="ui center aligned cardlevel">Lvl 8</div>
+                                <div class="card_progress_container">
+                                    <div class="card_progress_bg progress_color_red"
+                                         style="width:100%;"></div>
+                                    <div class="ui link card_upgrades">5 / MAX</div>
+                                </div>
+                            </div>
+                        </a>                        <a class="player_card_link" href="/card/rage">
+                            <div class="player_card">
+                                <img src="/static/img/cards/rage.png"/>
+                                <div class="ui center aligned cardlevel">Lvl 8</div>
+                                <div class="card_progress_container">
+                                    <div class="card_progress_bg progress_color_red"
+                                         style="width:100%;"></div>
+                                    <div class="ui link card_upgrades">5 / MAX</div>
+                                </div>
+                            </div>
+                        </a>                        <a class="player_card_link" href="/card/guards">
+                            <div class="player_card">
+                                <img src="/static/img/cards/guards.png"/>
+                                <div class="ui center aligned cardlevel">Lvl 8</div>
+                                <div class="card_progress_container">
+                                    <div class="card_progress_bg progress_color_red"
+                                         style="width:100%;"></div>
+                                    <div class="ui link card_upgrades">5 / MAX</div>
+                                </div>
+                            </div>
+                        </a>                        <a class="player_card_link" href="/card/clone">
+                            <div class="player_card">
+                                <img src="/static/img/cards/clone.png"/>
+                                <div class="ui center aligned cardlevel">Lvl 8</div>
+                                <div class="card_progress_container">
+                                    <div class="card_progress_bg progress_color_red"
+                                         style="width:100%;"></div>
+                                    <div class="ui link card_upgrades">5 / MAX</div>
+                                </div>
+                            </div>
+                        </a>                        <a class="player_card_link" href="/card/skeleton-army">
+                            <div class="player_card">
+                                <img src="/static/img/cards/skeleton-army.png"/>
+                                <div class="ui center aligned cardlevel">Lvl 8</div>
+                                <div class="card_progress_container">
+                                    <div class="card_progress_bg progress_color_red"
+                                         style="width:100%;"></div>
+                                    <div class="ui link card_upgrades">5 / MAX</div>
+                                </div>
+                            </div>
+                        </a>                        <a class="player_card_link" href="/card/goblin-barrel">
+                            <div class="player_card">
+                                <img src="/static/img/cards/goblin-barrel.png"/>
+                                <div class="ui center aligned cardlevel">Lvl 8</div>
+                                <div class="card_progress_container">
+                                    <div class="card_progress_bg progress_color_red"
+                                         style="width:100%;"></div>
+                                    <div class="ui link card_upgrades">5 / MAX</div>
+                                </div>
+                            </div>
+                        </a>                        <a class="player_card_link" href="/card/tornado">
+                            <div class="player_card">
+                                <img src="/static/img/cards/tornado.png"/>
+                                <div class="ui center aligned cardlevel">Lvl 8</div>
+                                <div class="card_progress_container">
+                                    <div class="card_progress_bg progress_color_red"
+                                         style="width:100%;"></div>
+                                    <div class="ui link card_upgrades">4 / MAX</div>
+                                </div>
+                            </div>
+                        </a>                        <a class="player_card_link" href="/card/poison">
+                            <div class="player_card">
+                                <img src="/static/img/cards/poison.png"/>
+                                <div class="ui center aligned cardlevel">Lvl 8</div>
+                                <div class="card_progress_container">
+                                    <div class="card_progress_bg progress_color_red"
+                                         style="width:100%;"></div>
+                                    <div class="ui link card_upgrades">5 / MAX</div>
+                                </div>
+                            </div>
+                        </a>                        <a class="player_card_link" href="/card/freeze">
+                            <div class="player_card">
+                                <img src="/static/img/cards/freeze.png"/>
+                                <div class="ui center aligned cardlevel">Lvl 8</div>
+                                <div class="card_progress_container">
+                                    <div class="card_progress_bg progress_color_red"
+                                         style="width:100%;"></div>
+                                    <div class="ui link card_upgrades">5 / MAX</div>
+                                </div>
+                            </div>
+                        </a>                        <a class="player_card_link" href="/card/hunter">
+                            <div class="player_card">
+                                <img src="/static/img/cards/hunter.png"/>
+                                <div class="ui center aligned cardlevel">Lvl 8</div>
+                                <div class="card_progress_container">
+                                    <div class="card_progress_bg progress_color_red"
+                                         style="width:100%;"></div>
+                                    <div class="ui link card_upgrades">0 / MAX</div>
+                                </div>
+                            </div>
+                        </a>                        <a class="player_card_link" href="/card/dark-prince">
+                            <div class="player_card">
+                                <img src="/static/img/cards/dark-prince.png"/>
+                                <div class="ui center aligned cardlevel">Lvl 8</div>
+                                <div class="card_progress_container">
+                                    <div class="card_progress_bg progress_color_red"
+                                         style="width:100%;"></div>
+                                    <div class="ui link card_upgrades">3 / MAX</div>
+                                </div>
+                            </div>
+                        </a>                        <a class="player_card_link" href="/card/baby-dragon">
+                            <div class="player_card">
+                                <img src="/static/img/cards/baby-dragon.png"/>
+                                <div class="ui center aligned cardlevel">Lvl 8</div>
+                                <div class="card_progress_container">
+                                    <div class="card_progress_bg progress_color_red"
+                                         style="width:100%;"></div>
+                                    <div class="ui link card_upgrades">4 / MAX</div>
+                                </div>
+                            </div>
+                        </a>                        <a class="player_card_link" href="/card/witch">
+                            <div class="player_card">
+                                <img src="/static/img/cards/witch.png"/>
+                                <div class="ui center aligned cardlevel">Lvl 8</div>
+                                <div class="card_progress_container">
+                                    <div class="card_progress_bg progress_color_red"
+                                         style="width:100%;"></div>
+                                    <div class="ui link card_upgrades">5 / MAX</div>
+                                </div>
+                            </div>
+                        </a>                        <a class="player_card_link" href="/card/prince">
+                            <div class="player_card">
+                                <img src="/static/img/cards/prince.png"/>
+                                <div class="ui center aligned cardlevel">Lvl 8</div>
+                                <div class="card_progress_container">
+                                    <div class="card_progress_bg progress_color_red"
+                                         style="width:100%;"></div>
+                                    <div class="ui link card_upgrades">5 / MAX</div>
+                                </div>
+                            </div>
+                        </a>                        <a class="player_card_link" href="/card/bowler">
+                            <div class="player_card">
+                                <img src="/static/img/cards/bowler.png"/>
+                                <div class="ui center aligned cardlevel">Lvl 8</div>
+                                <div class="card_progress_container">
+                                    <div class="card_progress_bg progress_color_red"
+                                         style="width:100%;"></div>
+                                    <div class="ui link card_upgrades">5 / MAX</div>
+                                </div>
+                            </div>
+                        </a>                        <a class="player_card_link" href="/card/balloon">
+                            <div class="player_card">
+                                <img src="/static/img/cards/balloon.png"/>
+                                <div class="ui center aligned cardlevel">Lvl 8</div>
+                                <div class="card_progress_container">
+                                    <div class="card_progress_bg progress_color_red"
+                                         style="width:100%;"></div>
+                                    <div class="ui link card_upgrades">4 / MAX</div>
+                                </div>
+                            </div>
+                        </a>                        <a class="player_card_link" href="/card/executioner">
+                            <div class="player_card">
+                                <img src="/static/img/cards/executioner.png"/>
+                                <div class="ui center aligned cardlevel">Lvl 8</div>
+                                <div class="card_progress_container">
+                                    <div class="card_progress_bg progress_color_red"
+                                         style="width:100%;"></div>
+                                    <div class="ui link card_upgrades">2 / MAX</div>
+                                </div>
+                            </div>
+                        </a>                        <a class="player_card_link" href="/card/cannon-cart">
+                            <div class="player_card">
+                                <img src="/static/img/cards/cannon-cart.png"/>
+                                <div class="ui center aligned cardlevel">Lvl 8</div>
+                                <div class="card_progress_container">
+                                    <div class="card_progress_bg progress_color_red"
+                                         style="width:100%;"></div>
+                                    <div class="ui link card_upgrades">4 / MAX</div>
+                                </div>
+                            </div>
+                        </a>                        <a class="player_card_link" href="/card/lightning">
+                            <div class="player_card">
+                                <img src="/static/img/cards/lightning.png"/>
+                                <div class="ui center aligned cardlevel">Lvl 8</div>
+                                <div class="card_progress_container">
+                                    <div class="card_progress_bg progress_color_red"
+                                         style="width:100%;"></div>
+                                    <div class="ui link card_upgrades">4 / MAX</div>
+                                </div>
+                            </div>
+                        </a>                        <a class="player_card_link" href="/card/giant-skeleton">
+                            <div class="player_card">
+                                <img src="/static/img/cards/giant-skeleton.png"/>
+                                <div class="ui center aligned cardlevel">Lvl 8</div>
+                                <div class="card_progress_container">
+                                    <div class="card_progress_bg progress_color_red"
+                                         style="width:100%;"></div>
+                                    <div class="ui link card_upgrades">5 / MAX</div>
+                                </div>
+                            </div>
+                        </a>                        <a class="player_card_link" href="/card/x-bow">
+                            <div class="player_card">
+                                <img src="/static/img/cards/x-bow.png"/>
+                                <div class="ui center aligned cardlevel">Lvl 8</div>
+                                <div class="card_progress_container">
+                                    <div class="card_progress_bg progress_color_red"
+                                         style="width:100%;"></div>
+                                    <div class="ui link card_upgrades">5 / MAX</div>
+                                </div>
+                            </div>
+                        </a>                        <a class="player_card_link" href="/card/pekka">
+                            <div class="player_card">
+                                <img src="/static/img/cards/pekka.png"/>
+                                <div class="ui center aligned cardlevel">Lvl 8</div>
+                                <div class="card_progress_container">
+                                    <div class="card_progress_bg progress_color_red"
+                                         style="width:100%;"></div>
+                                    <div class="ui link card_upgrades">5 / MAX</div>
+                                </div>
+                            </div>
+                        </a>                        <a class="player_card_link" href="/card/golem">
+                            <div class="player_card">
+                                <img src="/static/img/cards/golem.png"/>
+                                <div class="ui center aligned cardlevel">Lvl 8</div>
+                                <div class="card_progress_container">
+                                    <div class="card_progress_bg progress_color_red"
+                                         style="width:100%;"></div>
+                                    <div class="ui link card_upgrades">4 / MAX</div>
+                                </div>
+                            </div>
+                        </a>                        <a class="player_card_link" href="/card/the-log">
+                            <div class="player_card">
+                                <img src="/static/img/cards/the-log.png"/>
+                                <div class="ui center aligned cardlevel">Lvl 5</div>
+                                <div class="card_progress_container">
+                                    <div class="card_progress_bg progress_color_red"
+                                         style="width:100%;"></div>
+                                    <div class="ui link card_upgrades">1 / MAX</div>
+                                </div>
+                            </div>
+                        </a>                        <a class="player_card_link" href="/card/princess">
+                            <div class="player_card">
+                                <img src="/static/img/cards/princess.png"/>
+                                <div class="ui center aligned cardlevel">Lvl 5</div>
+                                <div class="card_progress_container">
+                                    <div class="card_progress_bg progress_color_red"
+                                         style="width:100%;"></div>
+                                    <div class="ui link card_upgrades">1 / MAX</div>
+                                </div>
+                            </div>
+                        </a>                        <a class="player_card_link" href="/card/miner">
+                            <div class="player_card">
+                                <img src="/static/img/cards/miner.png"/>
+                                <div class="ui center aligned cardlevel">Lvl 5</div>
+                                <div class="card_progress_container">
+                                    <div class="card_progress_bg progress_color_red"
+                                         style="width:100%;"></div>
+                                    <div class="ui link card_upgrades">1 / MAX</div>
+                                </div>
+                            </div>
+                        </a>                        <a class="player_card_link" href="/card/bandit">
+                            <div class="player_card">
+                                <img src="/static/img/cards/bandit.png"/>
+                                <div class="ui center aligned cardlevel">Lvl 5</div>
+                                <div class="card_progress_container">
+                                    <div class="card_progress_bg progress_color_red"
+                                         style="width:100%;"></div>
+                                    <div class="ui link card_upgrades">1 / MAX</div>
+                                </div>
+                            </div>
+                        </a>                        <a class="player_card_link" href="/card/ice-wizard">
+                            <div class="player_card">
+                                <img src="/static/img/cards/ice-wizard.png"/>
+                                <div class="ui center aligned cardlevel">Lvl 5</div>
+                                <div class="card_progress_container">
+                                    <div class="card_progress_bg progress_color_red"
+                                         style="width:100%;"></div>
+                                    <div class="ui link card_upgrades">1 / MAX</div>
+                                </div>
+                            </div>
+                        </a>                        <a class="player_card_link" href="/card/royal-ghost">
+                            <div class="player_card">
+                                <img src="/static/img/cards/royal-ghost.png"/>
+                                <div class="ui center aligned cardlevel">Lvl 5</div>
+                                <div class="card_progress_container">
+                                    <div class="card_progress_bg progress_color_red"
+                                         style="width:100%;"></div>
+                                    <div class="ui link card_upgrades">1 / MAX</div>
+                                </div>
+                            </div>
+                        </a>                        <a class="player_card_link" href="/card/inferno-dragon">
+                            <div class="player_card">
+                                <img src="/static/img/cards/inferno-dragon.png"/>
+                                <div class="ui center aligned cardlevel">Lvl 5</div>
+                                <div class="card_progress_container">
+                                    <div class="card_progress_bg progress_color_red"
+                                         style="width:100%;"></div>
+                                    <div class="ui link card_upgrades">1 / MAX</div>
+                                </div>
+                            </div>
+                        </a>                        <a class="player_card_link" href="/card/electro-wizard">
+                            <div class="player_card">
+                                <img src="/static/img/cards/electro-wizard.png"/>
+                                <div class="ui center aligned cardlevel">Lvl 5</div>
+                                <div class="card_progress_container">
+                                    <div class="card_progress_bg progress_color_red"
+                                         style="width:100%;"></div>
+                                    <div class="ui link card_upgrades">1 / MAX</div>
+                                </div>
+                            </div>
+                        </a>                        <a class="player_card_link" href="/card/night-witch">
+                            <div class="player_card">
+                                <img src="/static/img/cards/night-witch.png"/>
+                                <div class="ui center aligned cardlevel">Lvl 5</div>
+                                <div class="card_progress_container">
+                                    <div class="card_progress_bg progress_color_red"
+                                         style="width:100%;"></div>
+                                    <div class="ui link card_upgrades">1 / MAX</div>
+                                </div>
+                            </div>
+                        </a>                        <a class="player_card_link" href="/card/lumberjack">
+                            <div class="player_card">
+                                <img src="/static/img/cards/lumberjack.png"/>
+                                <div class="ui center aligned cardlevel">Lvl 5</div>
+                                <div class="card_progress_container">
+                                    <div class="card_progress_bg progress_color_red"
+                                         style="width:100%;"></div>
+                                    <div class="ui link card_upgrades">1 / MAX</div>
+                                </div>
+                            </div>
+                        </a>                        <a class="player_card_link" href="/card/graveyard">
+                            <div class="player_card">
+                                <img src="/static/img/cards/graveyard.png"/>
+                                <div class="ui center aligned cardlevel">Lvl 5</div>
+                                <div class="card_progress_container">
+                                    <div class="card_progress_bg progress_color_red"
+                                         style="width:100%;"></div>
+                                    <div class="ui link card_upgrades">1 / MAX</div>
+                                </div>
+                            </div>
+                        </a>                        <a class="player_card_link" href="/card/sparky">
+                            <div class="player_card">
+                                <img src="/static/img/cards/sparky.png"/>
+                                <div class="ui center aligned cardlevel">Lvl 5</div>
+                                <div class="card_progress_container">
+                                    <div class="card_progress_bg progress_color_red"
+                                         style="width:100%;"></div>
+                                    <div class="ui link card_upgrades">1 / MAX</div>
+                                </div>
+                            </div>
+                        </a>                        <a class="player_card_link" href="/card/lava-hound">
+                            <div class="player_card">
+                                <img src="/static/img/cards/lava-hound.png"/>
+                                <div class="ui center aligned cardlevel">Lvl 5</div>
+                                <div class="card_progress_container">
+                                    <div class="card_progress_bg progress_color_red"
+                                         style="width:100%;"></div>
+                                    <div class="ui link card_upgrades">1 / MAX</div>
+                                </div>
+                            </div>
+                        </a>                        <a class="player_card_link" href="/card/mega-knight">
+                            <div class="player_card">
+                                <img src="/static/img/cards/mega-knight.png"/>
+                                <div class="ui center aligned cardlevel">Lvl 5</div>
+                                <div class="card_progress_container">
+                                    <div class="card_progress_bg progress_color_red"
+                                         style="width:100%;"></div>
+                                    <div class="ui link card_upgrades">1 / MAX</div>
+                                </div>
+                            </div>
+                        </a>                </div>
+            </div>
+
+            <style>
+
+                .player_card {
+                    display: inline-block;
+                    width: calc(4rem + 4vw);
+                    max-width: 6rem;
+                    text-align: center;
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    position: relative;
+                    margin-bottom: 0.5rem;
+                    padding-bottom: 0.5rem;
+
+                }
+
+                .player_card_enter img {
+                    background-color: #ffea8b;
+                    -moz-box-shadow: 0 0 15px #ffdf05;
+                    -webkit-box-shadow: 0 0 15px #ffdf05;
+                    box-shadow: 0px 0px 15px #ffdf05;
+                }
+
+                .player_card img {
+                    display: block;
+                    max-width: 100%;
+                }
+
+                .player_card * {
+                    color: black;
+                }
+
+                .cardlevel {
+                    margin-top: -2.5rem !important;
+                    margin-bottom: 2rem !important;
+                    color: white;
+                    text-shadow: 0 2px 5px #000;
+                    font-weight: 900;
+                }
+
+                .card_upgrades {
+                    position: absolute;
+                    z-index: 200;
+                    font-size: 0.7rem;
+                    text-align: center;
+                    font-weight: 500;
+                    width: 100%;
+                    bottom: 0.5rem;
+
+                }
+
+                .card_progress_bg {
+                    border-radius: 0.2rem;
+                    height: 100%;
+                    width: 100%;
+                    position: absolute;
+                    left: 0;
+                    margin: 0 0;
+                    top: 0;
+
+                }
+
+                .card_progress_container {
+                    border-radius: 0.2rem;
+                    height: 0.5rem;
+                    margin: 0 0.4rem 0;
+                    position: relative;
+                    max-width: 100%;
+                    z-index: 100;
+                    background-color: rgba(0, 0, 0, 0.1);
+                }
+
+                .progress_color_green {
+                    background-color: rgba(86, 182, 84, 1.000);
+                }
+
+                .progress_color_blue {
+                    bakcground-color: rgba(60, 133, 202, 1.000);
+                }
+
+                .progress_color_red {
+                    background-color: rgba(204, 59, 51, 1.000);
+                }
+            </style>
+
+
+
+    <!-- Footer -->
+        <div class="ui hidden divider" style="height:1rem;"></div>
+        <div class="ui inverted vertical footer segment">
+            <div class="ui container">
+                <div class="ui stackable inverted equal width  grid">
+                    <div class="column">
+                        <div class="ui inverted link list">
+                            <h4 class="ui inverted header">Clash Royale API</h4>
+                            <a class="item" href="/">Home</a>
+                            <a class="item" href="/player">Player</a>
+                            <a class="item" href="/clans">Clans</a>
+                            <a class="item" href="/clans/search">Clan Search</a>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="ui inverted link list">
+                            <h4 class="ui inverted header mobile-hide">&nbsp;</h4>
+                            <a class="item" href="/leaderboard">Leaderboard</a>
+                            <a class="item" href="/decks">Decks</a>
+                            <a class="item" href="/cards">Cards</a>
+                            <a class="item" href="/tournaments">Tournaments</a>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="ui inverted link list">
+                            <h4 class="ui inverted header">Help</h4>
+                            <a class="item" href="http://docs.cr-api.com">Documentation</a>
+                            <a class="item" href="https://github.com/cr-api/cr-api">Support</a>
+                            <a class="item" href="/#donate">
+                                Donate
+                            </a>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="ui inverted link list">
+                            <h4 class="ui inverted header">Social</h4>
+                            <a class="item" href="https://github.com/cr-api/cr-api">
+                                Github
+                            </a>
+                            <a class="item" href="https://discord.me/cr_api">
+                                Discord
+                            </a>
+                            <a class="item" href="https://twitter.com/CRPublicAPI">
+                                Twitter
+                            </a>
+                            <a class="item" href="https://facebook.com/CRPublicAPI">
+                                Facebook
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="ui divider"></div>
+                <div class="ui vertical segment ">
+                    <div class="ui inverted meta disclaimer">
+                        <p>
+                            This content is not affiliated with, endorsed, sponsored, or specifically approved by
+                            Supercell
+                            and Supercell is not responsible for it. For more information
+                            see Supercell’s <a href="http://www.supercell.com/fan-content-policy" target="_blank">Fan
+                            Content Policy</a>.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <style>
+            .disclaimer * {
+                color: #666;
+            }
+
+            .inverted input[type=text] {
+                color: #fff !important;
+            }
+
+
+        </style>
+
+
+</div>
+
+<!-- Nav scripts -->
+        <script data-rocketsrc="/static/semantic/dist/semantic.min.js?1516230560" type="text/rocketscript"></script>
+    <script type="text/rocketscript" data-rocketsrc="/static/jslib/handlebars.js"></script>
+    <script type="text/rocketscript" data-rocketsrc="/static/jslib/store.everything.min.js"></script>
+    <script type="text/rocketscript" data-rocketsrc="/static/jslib/sort_properties.js?1516230560"></script>
+    <script type="text/rocketscript" data-rocketsrc="/static/js/storage/player_storage.js?1516230560"></script>
+    <script type="text/rocketscript" data-rocketsrc="/static/js/app.js?1516230560"></script>
+    <script type="text/rocketscript" data-rocketsrc="/static/js/sidebar.js?1516230560"></script>
+    <script type="text/rocketscript" data-rocketsrc="/static/js/ga_events.js?1516230560"></script>
+    <script type="text/rocketscript" data-rocketsrc="/static/js/nav.js?1516230560"></script>
+    <script type="text/rocketscript" data-rocketsrc="/static/js/storage/fave_menu.js?1516230560"></script>
+
+<script type="text/rocketscript">
+$(document).ready(function () {
+            player_storage.store_player('89Y8RVLY', '美美的牛小牛');
+    populate_fave_menu();
+});
+</script>    <script type="text/rocketscript">
+    $(document).ready(function () {
+        // init accordion
+        $('.sidebar.accordion').accordion();
+    })
+    </script>
+
+
+    <script type="text/rocketscript">
+    $(document).ready(function () {
+        // card progress
+        $('.player_card')
+            .mouseenter(function () {
+                $(this).addClass('player_card_enter');
+            })
+            .mouseleave(function () {
+                $(this).removeClass('player_card_enter');
+            });
+    })
+    </script>
+
+</body>
+</html>

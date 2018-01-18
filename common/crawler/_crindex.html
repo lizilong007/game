@@ -1,0 +1,1062 @@
+
+<!doctype html>
+<html lang="en">
+<head>
+    
+    
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1"/>
+        <title>美美的牛小牛 #89Y8RVLY |  | Player Profile | Clash Royale API</title>
+        <!-- Favicon -->
+        <script type="text/javascript">
+//<![CDATA[
+window.__cfRocketOptions = {byc:0,p:0,petok:"c770ba5789cd486485f4cdb3d63931892f0158f7-1516198055-1800"};
+//]]>
+</script>
+<script type="text/javascript" src="https://ajax.cloudflare.com/cdn-cgi/scripts/9014afdb/cloudflare-static/rocket.min.js"></script>
+<link rel="apple-touch-icon" sizes="180x180" href="/static/img/favicon/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/static/img/favicon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/static/img/favicon/favicon-16x16.png">
+        <link rel="manifest" href="/static/img/favicon/manifest.json">
+        <link rel="mask-icon" href="/static/img/favicon/safari-pinned-tab.svg" color="#5bbad5">
+        <link rel="shortcut icon" href="/static/img/favicon/favicon.ico">
+        <meta name="msapplication-config" content="/static/img/favicon/browserconfig.xml">
+        <meta name="theme-color" content="#ffffff">
+        <!-- End: Favicon -->
+        <!-- Rich Link Preview -->
+        <meta name="title" content="美美的牛小牛 #89Y8RVLY |  | Player Profile | Clash Royale API">
+        <meta name="description" content="Clash Royale Public API">
+        <meta name="keywords" content="Clash Royale, API, games, mobile, CR, cr-api, Clash Royale API">
+        <meta property="og:title" content="美美的牛小牛 #89Y8RVLY |  | Player Profile | Clash Royale API">
+        <meta property="og:type" content="website">
+        <meta property="og:description" content="Clash Royale Public API">
+        <meta property="og:image" content="http://cr-api.com/static/img/branding/cr-api-logo.png">
+        <meta property="og:site_name" content="Clash Royale Public API">
+        <!-- End: Rich Link Preview -->
+        <link rel="stylesheet" type="text/css"
+              href="/static/semantic/dist/semantic.min.css?1516194706"/>
+        <link rel="stylesheet" type="text/css" href="/static/css/app.css?1516194706"/>
+    
+
+    <!-- Google Analytics -->
+    <script type="text/rocketscript">
+    window.ga = window.ga || function () {
+        (ga.q = ga.q || []).push(arguments)
+    };
+    ga.l = +new Date;
+    ga('create', 'UA-100687612-4', 'auto');
+    ga('send', 'pageview');
+    </script>
+    <script async data-rocketsrc="https://www.google-analytics.com/analytics.js" type="text/rocketscript"></script>
+    <!-- End Google Analytics -->
+    <!-- Iframe block -->
+    <script type="text/rocketscript">
+    if (window.self !== window.top) {
+        window.top.location.href = window.location.href;
+    }
+    </script>
+    <script data-rocketsrc="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous" type="text/rocketscript"></script>
+
+</head>
+<body class="">
+<!-- Sidebar -->
+
+
+
+    <div class="ui vertical accordion inverted sidebar menu right" id="toc" style="">
+        <div class="brand header item">
+            <a class="ui logo mini image" href="/">
+                <img src="/static/img/branding/cr-api-logo.png" style="padding-right: 0.7rem;"/>
+            </a>
+            <a href="/">Clash Royale API</a>
+        </div>
+        <a class="item" href="/">Home</a>
+        <div class="item">
+            <a class="title">
+                <i class="dropdown icon"></i>
+                Players
+            </a>
+            <div class="content">
+                <a class="item" href="/player">Overview</a>
+                <a class="item" href="/players/pro">Professionals</a>
+                <a class="item" href="/players/leaderboard">Leaderboard</a>
+                <div class="item">
+                    <form id="sidebar_player_search_form" class="ui fluid form" action="/player">
+                        <div class="ui transparent inverted icon input">
+                            <i class="search link icon"></i>
+                            <input id="sidebar-player-search" name="tag" type="text" class="prompt" placeholder="Tag…">
+                        </div>
+                        
+    <div class="ui error message pointing label">
+        Please enter a value
+    </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <a class="title">
+                <i class="dropdown icon"></i>
+                Clans
+            </a>
+            <div class="content">
+                <a class="item" href="/clans">Overview</a>
+                <a class="item" href="/clans">Families</a>
+                <a class="item" href="/clans/leaderboard">Leaderboard</a>
+                <div class="item">
+                    <form id="sidebar_clan_search_form" class="ui fluid form" action="/clan">
+                        <div class="ui transparent inverted icon input">
+                            <input id="sidebar-clan-search" name="tag" type="text" placeholder="Tag…">
+                            <i class="search link icon"></i>
+                        </div>
+                        
+    <div class="ui error message pointing label">
+        Please enter a value
+    </div>
+
+                    </form>
+                </div>
+                <div class="item">
+                    <form id="sidebar_clan_name_search_form" class="ui fluid form" action="/clans/search">
+                        <div class="ui transparent inverted icon input">
+                            <input id="sidebar-clan-name-search" name="name" type="text" placeholder="Name…">
+                            <i class="search link icon"></i>
+                        </div>
+                        
+    <div class="ui error message pointing label">
+        Please enter a value
+    </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <a class="title">
+                <i class="dropdown icon"></i>
+                Decks
+            </a>
+            <div class="content">
+                <a class="item" href="/decks">Overview</a>
+                <a class="item" href="/decks/popular">Popular</a>
+                <a class="item" href="/decks/leaderboard">Leaderboard Decks</a>
+                <a class="item" href="/decks/search">Search</a>
+            </div>
+        </div>
+        <div class="item">
+            <a class="title">
+                <i class="dropdown icon"></i>
+                Cards
+            </a>
+            <div class="content">
+                <a class="item" href="/cards/popular">Popular</a>
+                <a class="item" href="/cards/trends">Trends</a>
+            </div>
+        </div>
+        <div class="item">
+            <a class="title">
+                <i class="dropdown icon"></i>
+                Tournaments
+            </a>
+            <div class="content">
+                <a class="item" href="/tournaments">Overview</a>
+                <div class="item">
+                    <form id="sidebar_tournament_search_form" class="ui fluid form" action="/tournament">
+                        <div class="ui transparent inverted icon input">
+                            <input id="sidebar-tournament-search" name="tag" type="text" placeholder="Tag…">
+                            <i class="search link icon"></i>
+                        </div>
+                        
+    <div class="ui error message pointing label">
+        Please enter a value
+    </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="item">
+            <a class="title">
+                <i class="dropdown icon"></i>
+                Help
+            </a>
+            <div class="content">
+                <a class="item" href="http://docs.cr-api.com">
+                    Documentation
+                </a>
+                <a class="item" href="https://github.com/cr-api/cr-api">
+                    Support
+                </a>
+            </div>
+        </div>
+        <div class="item">
+            <a class="title">
+                <i class="dropdown icon"></i>
+                Social
+            </a>
+            <div class="content">
+                <a class="item" href="https://github.com/cr-api/cr-api">
+                    <i class="github icon"></i>
+                    Github
+                </a>
+                <a class="item" href="https://discord.me/cr_api">
+                    Discord
+                </a>
+                <a class="item" href="https://twitter.com/CRPublicAPI">
+                    Twitter
+                </a>
+                <a class="item" href="https://facebook.com/CRPublicAPI">
+                    Facebook
+                </a>
+            </div>
+        </div>
+        <a class="item" href="/#donate">
+            Donate
+        </a>
+    </div>
+
+
+
+<!-- End Sidebar -->
+<div class="pusher">
+    <!-- always on topnav -->
+    <div class="ui top fixed borderless fluid menu">
+        <a class="brand item header" href="/">
+            <img src="/static/img/branding/cr-api-logo.png" style="padding-right: 0.7rem;"/>
+            <span class="mobile-hide">Clash Royale API</span>
+        </a>
+        <div class="right menu">
+            <a class="mobile-hide nav item" href="/player">
+                Players
+            </a>
+            <a class="mobile-hide nav item" href="/clans">
+                Clans
+            </a>
+            <a class="mobile-hide nav item" href="/decks">
+                Decks
+            </a>
+            <a class="mobile-hide nav item" href="/cards">
+                Cards
+            </a>
+            <a class="mobile-hide nav item" href="/tournaments">
+                Tournaments
+            </a>
+            <div id="top-fave" class="ui dropdown  item">
+                <i class="heart icon"></i>
+                <i class="dropdown icon"></i>
+                <div id="player_saved_menu" class="menu">
+                    
+                    
+                    
+                    
+                </div>
+            </div>
+            <div id="sidebar-toggle" class="link item">
+                <i class="content icon"></i>
+            </div>
+        </div>
+
+    </div>
+    <div class="ui hidden divider" style="height:1.1rem;"></div>
+
+    <!-- Page Contents -->
+    
+    <!-- BG -->
+    <div id="player-bg" class="background-gradient"></div>
+
+
+    
+    
+    
+
+
+
+    <!-- family menu -->
+    
+    
+    <!-- player menu -->
+    
+
+
+    
+
+<form id="player_search_attached_form" class="ui fluid form" action="/player">
+    <div class="ui attached lightwash menu">
+        <a class="header item" href="/player">Players</a>
+        <div class="ui search item">
+            <div class="ui transparent icon input">
+                <input id="player_search_input" name="tag" class="prompt" type="text"
+                       placeholder="#89Y8RVLY" style="width:40vw;">
+                <i class="search link icon"></i>
+            </div>
+        </div>
+        <a class="item" href="/players/pro">Pro</a>
+        <a class="item" href="/players/leaderboard">L<span class="mobile-hide">eaderboard</span><span class="mobile-show">B</span></a>
+    </div>
+    <div class="ui error message attached segment" style=" border:none;">
+        Please enter a value
+    </div>
+
+</form>
+
+
+    <
+        <!-- Menu -->
+        
+            
+
+
+
+
+
+
+<div class="ui hidden divider"></div>
+<div class="ui container">
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="ui top attached padded segment">
+    <div class="ui unstackable grid">
+        <div class="thirteen wide column">
+            <h1 class="ui header" style="vertical-align:bottom;">美美的牛小牛</h1>
+            <div class="ui hidden divider"></div>
+            <div class="ui hidden divider"></div>
+            <div class="ui horizontal divided list">
+                <div class="ui header item">
+                    
+    
+        Co-Leader
+
+                </div>
+                <div class="item">
+                    
+        <a href="/clan/29YY8L89">娱乐至上</a>
+
+                </div>
+                <div class="item">
+                    
+        #29YY8L89
+
+                </div>
+            </div>
+        </div>
+        <div class="three wide right column">
+            
+    
+        <a href="/clan/29YY8L89">
+            <img class="ui floated right image"
+                 src="/static/img/badge/Cherry_Blossom_01.png"/>
+        </a>
+        
+
+        </div>
+    </div>
+
+</div>
+
+<style>
+    @media only screen and (max-width: 767px) {
+        .ui.stackable.grid > .column:not(.row) {
+            padding: 0.3rem !important;
+        }
+    }
+</style>
+
+    <div class="ui lightwash bottom attached menu">
+        <a class="item 
+    active
+" href="/player/89Y8RVLY/">Stats</a>
+        <a class="item 
+    
+" href="/player/89Y8RVLY/cards">Cards</a>
+        <a class="item 
+    
+" href="/player/89Y8RVLY/battles">Battles</a>
+        
+        
+    </div>
+</div>
+        
+
+        <div class="ui hidden divider"></div>
+
+        <!-- Stats -->
+        <div id="player" class="ui container">
+            
+    
+    
+        <div class="ui two stackable cards">
+
+            <div class="card">
+                <div class="content">
+                    <img class="right floated mini ui image"
+                         src="/static/img/arenas/league9.png"/>
+                    <div class="header">
+                        Best Season
+                    </div>
+                    <div class="ui horizontal divided list">
+                        <div class="item">
+                            <img class="ui verytiny image" src="/static/img/ui/rank.png"/>
+                            Unranked
+                        </div>
+                        <div class="item">
+                            <img class="ui verytiny image" src="/static/img/ui/trophy.png"/>
+                            6,550
+                        </div>
+                        <div class="item">
+                            Ultimate Champion
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="content">
+                    <img class="right floated mini ui image"
+                         src="/static/img/arenas/league9.png"/>
+                    <div class="header ">
+                        Previous Season
+                    </div>
+                    <div class="ui horizontal divided list">
+                        <div class="item">
+                            <img class="ui verytiny image" src="/static/img/ui/rank.png"/>
+                            Unranked
+                        </div>
+                        <div class="item">
+                            <img class="ui verytiny image" src="/static/img/ui/trophy.png"/>
+                            6,422 / 6,422 PB
+                        </div>
+                        <div class="item">
+                            Ultimate Champion
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+
+            <div class="ui four stackable doubling cards">
+                
+                <div class="card">
+                        <div class="content">
+                            <img class="right floated mini ui image" src="/static/img/ui/trophy.png"/>
+                            <div class="header">5,738</div>
+                            <div class="meta">Trophies</div>
+                        </div>
+                    </div>
+                <div class="card">
+                        <div class="content">
+                            <img class="right floated mini ui image" src="/static/img/ui/trophy.png"/>
+                            <div class="header">6,694</div>
+                            <div class="meta">Highest Trophies</div>
+                        </div>
+                    </div>
+                <div class="card">
+                        <div class="content">
+                            <img class="right floated mini ui image" src="/static/img/ui/rank.png"/>
+                            <div class="header">48th</div>
+                            <div class="meta">Rank</div>
+                        </div>
+                    </div>
+                <div class="card">
+                        <div class="content">
+                            <img class="right floated mini ui image" src="/static/img/arenas/arena18.png"/>
+                            <div class="header">Master III</div>
+                            <div class="meta">League 6</div>
+                        </div>
+                    </div>
+                <div class="card">
+                        <div class="content">
+                            <img class="right floated mini ui image" src="/static/img/ui/battle.png"/>
+                            <div class="header">8,756</div>
+                            <div class="meta">Ladder 1v1 Wins</div>
+                        </div>
+                    </div>
+                <div class="card">
+                        <div class="content">
+                            <img class="right floated mini ui image" src="/static/img/ui/battle.png"/>
+                            <div class="header">6,288</div>
+                            <div class="meta">Ladder 1v1 Losses</div>
+                        </div>
+                    </div>
+                <div class="card">
+                        <div class="content">
+                            <img class="right floated mini ui image" src="/static/img/ui/battle.png"/>
+                            <div class="header">2,732</div>
+                            <div class="meta">Ladder 1v1 Draws + 2v2 Games</div>
+                        </div>
+                    </div>
+                <div class="card">
+                        <div class="content">
+                            <img class="right floated mini ui image" src="/static/img/ui/battle.png"/>
+                            <div class="header">17,776</div>
+                            <div class="meta">Total Ladder Games</div>
+                        </div>
+                    </div>
+                <div class="card">
+                        <div class="content">
+                            <img class="right floated mini ui image" src="/static/img/ui/battle.png"/>
+                            <div class="header">58.203%</div>
+                            <div class="meta">Ladder 1v1 Win Percentage</div>
+                        </div>
+                    </div>
+                <div class="card">
+                        <div class="content">
+                            <img class="right floated mini ui image" src="/static/img/ui/battle.png"/>
+                            <div class="header">41.797%</div>
+                            <div class="meta">Ladder 1v1 Loss Percentage</div>
+                        </div>
+                    </div>
+                <div class="card">
+                        <div class="content">
+                            <img class="right floated mini ui image" src="/static/img/ui/crown-blue.png"/>
+                            <div class="header">3,857</div>
+                            <div class="meta">Three Crown Wins on Ladder + Challenges</div>
+                        </div>
+                    </div>
+                <div class="card">
+                        <div class="content">
+                            <img class="right floated mini ui image" src="/static/img/ui/battle.png"/>
+                            <div class="header">5 weeks, 2 days and 48 minutes</div>
+                            <div class="meta">Min. Time Spent on Ladder</div>
+                        </div>
+                    </div>
+                <div class="card">
+                        <div class="content">
+                            <img class="right floated mini ui image" src="/static/img/ui/tournament.png"/>
+                            <div class="header">20</div>
+                            <div class="meta">Challenge Max Wins</div>
+                        </div>
+                    </div>
+                <div class="card">
+                        <div class="content">
+                            <img class="right floated mini ui image" src="/static/img/ui/challenge-classic.png"/>
+                            <div class="header">332,150</div>
+                            <div class="meta">Challenge Cards Won</div>
+                        </div>
+                    </div>
+                <div class="card">
+                        <div class="content">
+                            <img class="right floated mini ui image" src="/static/img/ui/tournament.png"/>
+                            <div class="header">1,726</div>
+                            <div class="meta">Tourney Games Played</div>
+                        </div>
+                    </div>
+                <div class="card">
+                        <div class="content">
+                            <img class="right floated mini ui image" src="/static/img/ui/tournament.png"/>
+                            <div class="header">120,335</div>
+                            <div class="meta">Tourney Cards Won</div>
+                        </div>
+                    </div>
+                <div class="card">
+                        <div class="content">
+                            <img class="right floated mini ui image" src="/static/img/ui/cards.png"/>
+                            <div class="header">81</div>
+                            <div class="meta">Cards Found</div>
+                        </div>
+                    </div>
+                <div class="card">
+                        <div class="content">
+                            <img class="right floated mini ui image" src="/static/img/ui/cards.png"/>
+                            <div class="header">102,226</div>
+                            <div class="meta">Total Donations</div>
+                        </div>
+                    </div>
+                <div class="card">
+                        <div class="content">
+                            <img class="right floated mini ui image" src="/static/img/ui/experience.png"/>
+                            <div class="header">13</div>
+                            <div class="meta">Level</div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+        <!-- Seasons -->
+
+        <!-- Chests -->
+        <div class="ui segment container">
+            <h3 class="ui header">Chests</h3>
+            <div class="ui six  cards">
+                    <div class="chest card" data-tooltip="Silver Chest: 1" data-position="top center"
+                         data-variation="inverted">
+                        <div class="image" style="background-color:transparent;">
+                            <img class="ui image" src="/static/img/chests/chest-silver.png"/>
+                            <div class="floating ui label">1</div>
+                        </div>
+                        <div class="content">
+                            <div class="meta center aligned">Silver Chest</div>
+                            <!--<div class="meta center aligned"></div>-->
+                        </div>
+                    </div>
+                    <div class="chest card" data-tooltip="Gold Chest: 2" data-position="top center"
+                         data-variation="inverted">
+                        <div class="image" style="background-color:transparent;">
+                            <img class="ui image" src="/static/img/chests/chest-gold.png"/>
+                            <div class="floating ui label">2</div>
+                        </div>
+                        <div class="content">
+                            <div class="meta center aligned">Gold Chest</div>
+                            <!--<div class="meta center aligned"></div>-->
+                        </div>
+                    </div>
+                    <div class="chest card" data-tooltip="Silver Chest: 3" data-position="top center"
+                         data-variation="inverted">
+                        <div class="image" style="background-color:transparent;">
+                            <img class="ui image" src="/static/img/chests/chest-silver.png"/>
+                            <div class="floating ui label">3</div>
+                        </div>
+                        <div class="content">
+                            <div class="meta center aligned">Silver Chest</div>
+                            <!--<div class="meta center aligned"></div>-->
+                        </div>
+                    </div>
+                    <div class="chest card" data-tooltip="Silver Chest: 4" data-position="top center"
+                         data-variation="inverted">
+                        <div class="image" style="background-color:transparent;">
+                            <img class="ui image" src="/static/img/chests/chest-silver.png"/>
+                            <div class="floating ui label">4</div>
+                        </div>
+                        <div class="content">
+                            <div class="meta center aligned">Silver Chest</div>
+                            <!--<div class="meta center aligned"></div>-->
+                        </div>
+                    </div>
+                    <div class="chest card" data-tooltip="Gold Chest: 5" data-position="top center"
+                         data-variation="inverted">
+                        <div class="image" style="background-color:transparent;">
+                            <img class="ui image" src="/static/img/chests/chest-gold.png"/>
+                            <div class="floating ui label">5</div>
+                        </div>
+                        <div class="content">
+                            <div class="meta center aligned">Gold Chest</div>
+                            <!--<div class="meta center aligned"></div>-->
+                        </div>
+                    </div>
+                    <div class="chest card" data-tooltip="Silver Chest: 6" data-position="top center"
+                         data-variation="inverted">
+                        <div class="image" style="background-color:transparent;">
+                            <img class="ui image" src="/static/img/chests/chest-silver.png"/>
+                            <div class="floating ui label">6</div>
+                        </div>
+                        <div class="content">
+                            <div class="meta center aligned">Silver Chest</div>
+                            <!--<div class="meta center aligned"></div>-->
+                        </div>
+                    </div>
+                    <div class="chest card" data-tooltip="Silver Chest: 7" data-position="top center"
+                         data-variation="inverted">
+                        <div class="image" style="background-color:transparent;">
+                            <img class="ui image" src="/static/img/chests/chest-silver.png"/>
+                            <div class="floating ui label">7</div>
+                        </div>
+                        <div class="content">
+                            <div class="meta center aligned">Silver Chest</div>
+                            <!--<div class="meta center aligned"></div>-->
+                        </div>
+                    </div>
+                    <div class="chest card" data-tooltip="Silver Chest: 8" data-position="top center"
+                         data-variation="inverted">
+                        <div class="image" style="background-color:transparent;">
+                            <img class="ui image" src="/static/img/chests/chest-silver.png"/>
+                            <div class="floating ui label">8</div>
+                        </div>
+                        <div class="content">
+                            <div class="meta center aligned">Silver Chest</div>
+                            <!--<div class="meta center aligned"></div>-->
+                        </div>
+                    </div>
+                    <div class="chest card" data-tooltip="Gold Chest: 9" data-position="top center"
+                         data-variation="inverted">
+                        <div class="image" style="background-color:transparent;">
+                            <img class="ui image" src="/static/img/chests/chest-gold.png"/>
+                            <div class="floating ui label">9</div>
+                        </div>
+                        <div class="content">
+                            <div class="meta center aligned">Gold Chest</div>
+                            <!--<div class="meta center aligned"></div>-->
+                        </div>
+                    </div>
+                    <div class="chest card" data-tooltip="Giant Chest: 21" data-position="top center"
+                         data-variation="inverted">
+                        <div class="image" style="background-color:transparent;">
+                            <img class="ui image" src="/static/img/chests/chest-giant.png"/>
+                            <div class="floating ui label">21</div>
+                        </div>
+                        <div class="content">
+                            <div class="meta center aligned">Giant Chest</div>
+                            <!--<div class="meta center aligned"></div>-->
+                        </div>
+                    </div>
+                    <div class="chest card" data-tooltip="Magical Chest: 42" data-position="top center"
+                         data-variation="inverted">
+                        <div class="image" style="background-color:transparent;">
+                            <img class="ui image" src="/static/img/chests/chest-magical.png"/>
+                            <div class="floating ui label">42</div>
+                        </div>
+                        <div class="content">
+                            <div class="meta center aligned">Magical Chest</div>
+                            <!--<div class="meta center aligned"></div>-->
+                        </div>
+                    </div>
+                    <div class="chest card" data-tooltip="Epic Chest: 66" data-position="top center"
+                         data-variation="inverted">
+                        <div class="image" style="background-color:transparent;">
+                            <img class="ui image" src="/static/img/chests/chest-epic.png"/>
+                            <div class="floating ui label">66</div>
+                        </div>
+                        <div class="content">
+                            <div class="meta center aligned">Epic Chest</div>
+                            <!--<div class="meta center aligned"></div>-->
+                        </div>
+                    </div>
+                    <div class="chest card" data-tooltip="Super Magical Chest: 158" data-position="top center"
+                         data-variation="inverted">
+                        <div class="image" style="background-color:transparent;">
+                            <img class="ui image" src="/static/img/chests/chest-supermagical.png"/>
+                            <div class="floating ui label">158</div>
+                        </div>
+                        <div class="content">
+                            <div class="meta center aligned">Super Magical Chest</div>
+                            <!--<div class="meta center aligned"></div>-->
+                        </div>
+                    </div>
+                    <div class="chest card" data-tooltip="Legendary Chest: 805" data-position="top center"
+                         data-variation="inverted">
+                        <div class="image" style="background-color:transparent;">
+                            <img class="ui image" src="/static/img/chests/chest-legendary.png"/>
+                            <div class="floating ui label">805</div>
+                        </div>
+                        <div class="content">
+                            <div class="meta center aligned">Legendary Chest</div>
+                            <!--<div class="meta center aligned"></div>-->
+                        </div>
+                    </div>
+            </div>
+            <style>
+                .chest.card {
+                    box-shadow: none !important;
+                    -webkit-box-shadow: none !important;
+                    -moz-box-shadow: none !important;
+                }
+
+                .chest.card .content {
+                    border: 0 !important;
+                }
+            </style>
+        </div>
+
+        <!-- Deck -->
+        <div class="ui segment container">
+            <h3 class="ui header">Deck</h3>
+            <div class="ui two column stackable grid">
+                
+                
+                    
+                        <div class="column">
+                        <div class="ui four column unstackable grid">
+                    
+
+                <div class="center aligned column">
+                    <img class="ui image" src="/static/img/cards/mega-knight.png"/>
+                    <h5 class="ui header center aligned cardlevel">Level 5</h5>
+                    <div class="card_progress_container" style="position:relative;">
+                        <div class="card_progress_bg"
+                             style="width:100%; background-color:rgba(0,0,0,0.1);"></div>
+                        <div class="card_progress_bg"
+                             style="width:100%; background-color:rgba(204, 59, 51, 1.000);"></div>
+                    </div>
+                    <div class="center aligned">1 / MAX</div>
+
+                </div>
+
+                
+                    
+
+                <div class="center aligned column">
+                    <img class="ui image" src="/static/img/cards/royal-ghost.png"/>
+                    <h5 class="ui header center aligned cardlevel">Level 5</h5>
+                    <div class="card_progress_container" style="position:relative;">
+                        <div class="card_progress_bg"
+                             style="width:100%; background-color:rgba(0,0,0,0.1);"></div>
+                        <div class="card_progress_bg"
+                             style="width:100%; background-color:rgba(204, 59, 51, 1.000);"></div>
+                    </div>
+                    <div class="center aligned">1 / MAX</div>
+
+                </div>
+
+                
+                    
+
+                <div class="center aligned column">
+                    <img class="ui image" src="/static/img/cards/fireball.png"/>
+                    <h5 class="ui header center aligned cardlevel">Level 11</h5>
+                    <div class="card_progress_container" style="position:relative;">
+                        <div class="card_progress_bg"
+                             style="width:100%; background-color:rgba(0,0,0,0.1);"></div>
+                        <div class="card_progress_bg"
+                             style="width:100%; background-color:rgba(204, 59, 51, 1.000);"></div>
+                    </div>
+                    <div class="center aligned">2 / MAX</div>
+
+                </div>
+
+                
+                    
+
+                <div class="center aligned column">
+                    <img class="ui image" src="/static/img/cards/baby-dragon.png"/>
+                    <h5 class="ui header center aligned cardlevel">Level 8</h5>
+                    <div class="card_progress_container" style="position:relative;">
+                        <div class="card_progress_bg"
+                             style="width:100%; background-color:rgba(0,0,0,0.1);"></div>
+                        <div class="card_progress_bg"
+                             style="width:100%; background-color:rgba(204, 59, 51, 1.000);"></div>
+                    </div>
+                    <div class="center aligned">4 / MAX</div>
+
+                </div>
+
+                
+                    </div>
+                    </div>
+                
+                    
+                        <div class="column">
+                        <div class="ui four column unstackable grid">
+                    
+
+                <div class="center aligned column">
+                    <img class="ui image" src="/static/img/cards/lumberjack.png"/>
+                    <h5 class="ui header center aligned cardlevel">Level 5</h5>
+                    <div class="card_progress_container" style="position:relative;">
+                        <div class="card_progress_bg"
+                             style="width:100%; background-color:rgba(0,0,0,0.1);"></div>
+                        <div class="card_progress_bg"
+                             style="width:100%; background-color:rgba(204, 59, 51, 1.000);"></div>
+                    </div>
+                    <div class="center aligned">1 / MAX</div>
+
+                </div>
+
+                
+                    
+
+                <div class="center aligned column">
+                    <img class="ui image" src="/static/img/cards/tornado.png"/>
+                    <h5 class="ui header center aligned cardlevel">Level 8</h5>
+                    <div class="card_progress_container" style="position:relative;">
+                        <div class="card_progress_bg"
+                             style="width:100%; background-color:rgba(0,0,0,0.1);"></div>
+                        <div class="card_progress_bg"
+                             style="width:100%; background-color:rgba(204, 59, 51, 1.000);"></div>
+                    </div>
+                    <div class="center aligned">4 / MAX</div>
+
+                </div>
+
+                
+                    
+
+                <div class="center aligned column">
+                    <img class="ui image" src="/static/img/cards/zap.png"/>
+                    <h5 class="ui header center aligned cardlevel">Level 13</h5>
+                    <div class="card_progress_container" style="position:relative;">
+                        <div class="card_progress_bg"
+                             style="width:100%; background-color:rgba(0,0,0,0.1);"></div>
+                        <div class="card_progress_bg"
+                             style="width:100%; background-color:rgba(204, 59, 51, 1.000);"></div>
+                    </div>
+                    <div class="center aligned">100 / MAX</div>
+
+                </div>
+
+                
+                    
+
+                <div class="center aligned column">
+                    <img class="ui image" src="/static/img/cards/bats.png"/>
+                    <h5 class="ui header center aligned cardlevel">Level 13</h5>
+                    <div class="card_progress_container" style="position:relative;">
+                        <div class="card_progress_bg"
+                             style="width:100%; background-color:rgba(0,0,0,0.1);"></div>
+                        <div class="card_progress_bg"
+                             style="width:100%; background-color:rgba(204, 59, 51, 1.000);"></div>
+                    </div>
+                    <div class="center aligned">92 / MAX</div>
+
+                </div>
+
+                
+                    </div>
+                    </div>
+                
+            </div>
+        </div>
+
+        <div class="ui hidden divider"></div>
+
+        <style>
+            .cardlevel {
+                margin-top: 0 !important;
+                margin-bottom: 0 !important;
+            }
+
+            .card_progress_bg {
+                border-radius: 0.5rem;
+                height: 0.5rem;
+                position: absolute;
+            }
+
+            .card_progress_container {
+                height: 1rem;
+                margin-top: 0.5rem;
+            }
+
+        </style>
+    
+
+
+
+
+    <!-- Footer -->
+    
+        <div class="ui hidden divider" style="height:1rem;"></div>
+        <div class="ui inverted vertical footer segment">
+            <div class="ui container">
+                <div class="ui stackable inverted equal width  grid">
+                    <div class="column">
+                        <div class="ui inverted link list">
+                            <h4 class="ui inverted header">Clash Royale API</h4>
+                            <a class="item" href="/">Home</a>
+                            <a class="item" href="/player">Player</a>
+                            <a class="item" href="/clans">Clans</a>
+                            <a class="item" href="/clans/search">Clan Search</a>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="ui inverted link list">
+                            <h4 class="ui inverted header mobile-hide">&nbsp;</h4>
+                            <a class="item" href="/leaderboard">Leaderboard</a>
+                            <a class="item" href="/decks">Decks</a>
+                            <a class="item" href="/cards">Cards</a>
+                            <a class="item" href="/tournaments">Tournaments</a>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="ui inverted link list">
+                            <h4 class="ui inverted header">Help</h4>
+                            <a class="item" href="http://docs.cr-api.com">Documentation</a>
+                            <a class="item" href="https://github.com/cr-api/cr-api">Support</a>
+                            <a class="item" href="/#donate">
+                                Donate
+                            </a>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="ui inverted link list">
+                            <h4 class="ui inverted header">Social</h4>
+                            <a class="item" href="https://github.com/cr-api/cr-api">
+                                Github
+                            </a>
+                            <a class="item" href="https://discord.me/cr_api">
+                                Discord
+                            </a>
+                            <a class="item" href="https://twitter.com/CRPublicAPI">
+                                Twitter
+                            </a>
+                            <a class="item" href="https://facebook.com/CRPublicAPI">
+                                Facebook
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="ui divider"></div>
+                <div class="ui vertical segment ">
+                    <div class="ui inverted meta disclaimer">
+                        <p>
+                            This content is not affiliated with, endorsed, sponsored, or specifically approved by
+                            Supercell
+                            and Supercell is not responsible for it. For more information
+                            see Supercell’s <a href="http://www.supercell.com/fan-content-policy" target="_blank">Fan
+                            Content Policy</a>.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <style>
+            .disclaimer * {
+                color: #666;
+            }
+
+            .inverted input[type=text] {
+                color: #fff !important;
+            }
+
+
+        </style>
+
+    
+
+</div>
+
+<!-- Nav scripts -->
+
+    
+    <script data-rocketsrc="/static/semantic/dist/semantic.min.js?1516194706" type="text/rocketscript"></script>
+    <script type="text/rocketscript" data-rocketsrc="/static/jslib/handlebars.js"></script>
+    <script type="text/rocketscript" data-rocketsrc="/static/jslib/store.everything.min.js"></script>
+    <script type="text/rocketscript" data-rocketsrc="/static/jslib/sort_properties.js?1516194706"></script>
+    <script type="text/rocketscript" data-rocketsrc="/static/js/storage/player_storage.js?1516194706"></script>
+    <script type="text/rocketscript" data-rocketsrc="/static/js/app.js?1516194706"></script>
+    <script type="text/rocketscript" data-rocketsrc="/static/js/sidebar.js?1516194706"></script>
+    <script type="text/rocketscript" data-rocketsrc="/static/js/ga_events.js?1516194706"></script>
+    <script type="text/rocketscript" data-rocketsrc="/static/js/nav.js?1516194706"></script>
+    <script type="text/rocketscript" data-rocketsrc="/static/js/storage/fave_menu.js?1516194706"></script>
+    
+
+<script type="text/rocketscript">
+$(document).ready(function () {
+    
+        
+            player_storage.store_player('89Y8RVLY', '美美的牛小牛');
+        
+    
+    populate_fave_menu();
+});
+</script>
+    <script type="text/rocketscript">
+    $(document).ready(function () {
+        // init accordion
+        $('.accordion').accordion();
+    })
+    </script>
+
+    <script type="text/rocketscript">
+        $(document).ready(function () {
+            // card progress
+            $('.progress').progress({
+                autoSuccess: false
+            });
+        })
+    </script>
+
+
+</body>
+</html>
