@@ -11,6 +11,8 @@ use common\crawler\PsnCrawler;
 use common\crawler\CocCrawler;
 use common\crawler\SteamCrawler;
 use common\crawler\CrCrawler;
+use common\crawler\XboxCrawler;
+use common\crawler\OwCrawler;
 
 class PubgController extends Controller
 {
@@ -71,7 +73,27 @@ class PubgController extends Controller
 
 	    $crawler = new CrCrawler;
 
-	    var_dump($crawler->make());die;
+	    var_dump($crawler->make('89Y8RVLY'));die;
+
+    }
+
+    public function actionXbox(){
+
+//      $user = PubgCompre::find()->andWhere(['id' => 1])->one();
+
+	    $crawler = new XboxCrawler;
+
+	    var_dump($crawler->make('CapacityList22'));die;
+
+    }
+
+    public function actionOw(){
+
+//      $user = PubgCompre::find()->andWhere(['id' => 1])->one();
+
+	    $crawler = new OwCrawler;
+
+	    var_dump($crawler->make('HaGoPeun-3364'));die;
 
     }
 
