@@ -13,9 +13,38 @@ use common\crawler\SteamCrawler;
 use common\crawler\CrCrawler;
 use common\crawler\XboxCrawler;
 use common\crawler\OwCrawler;
+use common\crawler\LolDogCrawler;
+use common\models\PubgUpdate;
 
 class PubgController extends Controller
 {
+    public function actionUpdate()
+    {
+        while (true) {
+            $pubgUpdate = PubgUpdate::find()->all();
+            if($pubgUpdate)
+            {
+                $names = [];
+                foreach($pubgUpdate ?: [] as $pubg)
+                {
+                    $names[$pubg->name] = $pubg->name;
+                }
+
+                foreach($names ?: [] as $name)
+                {
+                    try {
+                        $crawler = new PubgCrawler;
+                        $crawler->make($name);
+                    } catch (\Exception $e) {
+                        PubgUpdate::deleteAll(['name' => $name]);
+                    }
+                    PubgUpdate::deleteAll(['name' => $name]);
+                }
+            }
+            sleep(2);
+        }
+        
+    }
 
     public function actionCrawler(){
 
@@ -33,7 +62,7 @@ class PubgController extends Controller
 
         $crawler = new PsnCrawler;
 
-        var_dump($crawler->make('FrostwyrmKnight'));die;
+        var_dump(json_encode($crawler->make('FrostwyrmKnight')));die;
 
     }
 
@@ -43,7 +72,7 @@ class PubgController extends Controller
 
         $crawler = new CocCrawler;
 
-        var_dump($crawler->make('#V8RJJGYR'));die;
+        var_dump(json_encode($crawler->make('#V8RJJGYR')));die;
 
     }
 
@@ -53,7 +82,7 @@ class PubgController extends Controller
 
 	    $crawler = new SteamCrawler;
 
-	    var_dump($crawler->make('76561198023656749'));die;
+	    var_dump(json_encode($crawler->make('76561198023656749')));die;
 
     }
 
@@ -73,7 +102,7 @@ class PubgController extends Controller
 
 	    $crawler = new CrCrawler;
 
-	    var_dump($crawler->make('89Y8RVLY'));die;
+	    var_dump(json_encode($crawler->make('89Y8RVLY')));die;
 
     }
 
@@ -83,7 +112,7 @@ class PubgController extends Controller
 
 	    $crawler = new XboxCrawler;
 
-	    var_dump($crawler->make('CapacityList22'));die;
+	    var_dump(json_encode($crawler->make('CapacityList22')));die;
 
     }
 
@@ -93,7 +122,19 @@ class PubgController extends Controller
 
 	    $crawler = new OwCrawler;
 
-	    var_dump($crawler->make('HaGoPeun-3364'));die;
+	    var_dump(json_encode($crawler->make('HaGoPeun-3364')));die;
+
+    }
+
+    public function actionDog(){
+
+//      $user = PubgCompre::find()->andWhere(['id' => 1])->one();
+
+        $crawler = new LolDogCrawler;
+
+        var_dump(json_encode($crawler->account(9101001518416, '霜龙骑士')));die;
+
+        var_dump($crawler->search('霜龙骑士'));die;
 
     }
 

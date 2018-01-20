@@ -5,9 +5,9 @@ use Yii;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\helpers\Url;
+use yii\web\View;
 
-use common\models\LolAccount;
-use common\crawler\LolCrawler;
+use common\crawler\LolDogCrawler;
 
 
 /**
@@ -23,48 +23,32 @@ class LolController extends Controller
         $this->view->title = '号角个人游戏数据查询系统 - 内部版';
         $name = \Yii::$app->request->get('name');
 
-        $crawler = new LolCrawler;
-        $accountList = $crawler->search($name);
-        // 先保存
-        foreach($accountList['player_list'] ?: [] as $account)
-        {
-            LolAccount::createOrUpdate($account);
-        }
+        $crawler = new LolDogCrawler;
+        $account = $crawler->search($name);
 
-        return $this->render('search', ['accountList' => $accountList , 'name' => $name]);
+        return $this->render('search', ['account' => $account , 'name' => $name, 'gameId' => $gameId, 'gameName' => \common\crawler\CrawlerBase::$games[$gameId]]);
     }
-    // 比赛详情
-    /**
-     * Displays homepage.
-     *
-     * @return mixed
-     */
-    // 详情
+
+    // index
     public function actionIndex()
     {
         $this->layout = 'default.php';
         $this->view->title = '号角个人游戏数据查询系统 - 内部版';
-        $user_id = \Yii::$app->request->get('user_id');
+        $accountId = \Yii::$app->request->get('accountId');
+        $name = \Yii::$app->request->get('name');
 
-        $account = LolAccount::findOne(['user_id' => $user_id]);
+        $crawler = new LolDogCrawler;
+        $account = $crawler->account($accountId, $name);
 
-        $crawler = new LolCrawler;
-        $matchList = $crawler->matchList($account->user_id);
+        $this->view->registerJs('$(function(){
+        $(".match-detail-button").click(function() {
+            var key = $(this).attr("matchkey");
+            $( "#match-detail-"+key ).slideToggle( "slow" );
+        });
+    });', View::POS_READY);
 
-        if(!$account)
-        {
-            throw new NotFoundHttpException("the user id : $user_id, not found", 1);
-        }
-
-        return $this->render('index', ['matchList' => $matchList, 'account' => $account]);
+        return $this->render('index', ['account' => $account , 'name' => $name, 'gameId' => $gameId, 'gameName' => \common\crawler\CrawlerBase::$games[$gameId]]);
     }
-
-    public function actionUpdate()
-    {
-    	$name = \Yii::$app->request->get('name');
-    	
-    }
-
 
 
 }

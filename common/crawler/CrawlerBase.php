@@ -12,6 +12,12 @@ class CrawlerBase
     const DOTA2 = 3;
     const CSGO = 4;
     const D3 = 5;
+    const PSN = 6;
+    const STEAM = 7;
+    const COC = 8;
+    const CR = 9;
+    const OW = 10;
+    const XBOX = 11;
 
     public static $games = [
         CrawlerBase::PUBG => '绝地求生',
@@ -19,6 +25,12 @@ class CrawlerBase
         CrawlerBase::DOTA2 => 'DOTA2',
         CrawlerBase::CSGO => 'CS GO',
         CrawlerBase::D3 => '暗黑破坏神3',
+        CrawlerBase::PSN => 'PlayStationNetwork',
+        CrawlerBase::STEAM => 'STEAM',
+        CrawlerBase::COC => '部落冲突',
+        CrawlerBase::CR => '皇室战争',
+        CrawlerBase::OW => '守望先锋（外服）',
+        CrawlerBase::XBOX => 'XBOX LIVE',
     ];
 
     public function getContent($url, $isPhantom = false, $procedureName = '')

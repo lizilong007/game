@@ -1,4 +1,6 @@
-
+<?php
+use yii\helpers\Url;
+?>
 <div class="content">
 
 <!-- 头部简要信息开始 -->

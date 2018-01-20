@@ -26,7 +26,7 @@ class GameController extends Controller
         {
             switch ($game_id) {
                 case CrawlerBase::PUBG:
-                    $this->redirect(['pubg/index', 'name' => $name]);
+                    $this->redirect(['pubg/search', 'name' => $name]);
                     break;
                 case CrawlerBase::LOL:
                     $this->redirect(['lol/search', 'name' => $name]);
@@ -39,6 +39,24 @@ class GameController extends Controller
                     break;
                 case CrawlerBase::D3:
                     $this->redirect(['d3/search', 'name' => $name]);
+                    break;
+                case CrawlerBase::PSN:
+                    $this->redirect(['psn/search', 'name' => $name]);
+                    break;
+                case CrawlerBase::STEAM:
+                    $this->redirect(['psn/search', 'name' => $name]);
+                    break;
+                case CrawlerBase::COC:
+                    $this->redirect(['coc/search', 'name' => $name]);
+                    break;
+                case CrawlerBase::CR:
+                    $this->redirect(['cr/search', 'name' => $name]);
+                    break;
+                case CrawlerBase::OW:
+                    $this->redirect(['ow/search', 'name' => $name]);
+                    break;
+                case CrawlerBase::XBOX:
+                    $this->redirect(['xbox/search', 'name' => $name]);
                     break;
                 
                 default:

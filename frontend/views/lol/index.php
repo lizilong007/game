@@ -12,94 +12,227 @@ use yii\helpers\Url;
 
 	<div class="row">
 	  <div class="col-md-3"><span class="blod-font">游戏名</span></div>
-	  <div class="col-md-3"><span class="blod-font">英雄联盟</span></div>
+	  <div class="col-md-3"><span class="blod-font"><?=$gameName?></span></div>
 	</div>
 
 	<div class="row">
-	  <div class="col-md-3"><span class="blod-font">用户名/游戏ID</span></div>
-	  <div class="col-md-3"><span class="blod-font"><?=$account->name?></span></div>
+	  <div class="col-md-3"><span class="blod-font">游戏名/游戏ID</span></div>
+	  <div class="col-md-3"><span class="blod-font"><?=$name?></span></div>
 	</div>
+
 	</div>
 	<!-- 头部简要信息结束 -->
-
 	<div class="row-group">
-	<div class="row">
-	  <div class="col-md-2">
-	  	<!-- 头像 -->
-	  	<img src="<?=$account->avatar()?>" class="img-responsive img-rounded">
-	  </div>
-	  <div class="col-md-5">
-	  	<div class="row">
-		  <div class="col-md-6"><span class="normal-font"><?=$account->server_name .' '. $account->server_alias?></span></div>
-		  <div class="col-md-6"><span class="normal-font">等级：<?=$account->level?></span></div>
-		</div>
-
 		<div class="row">
-		  <div class="col-md-6"><span class="normal-font">隐藏分：<?=$account->box_score?></span></div>
-		  <div class="col-md-6"><span class="normal-font">段位：<?=$account->tier . $account->rank ?: '无段位'?></span></div>
-		</div>
-	  </div>
-
-	</div>
-	</div>
-
-	<div class="row-group">
-	<div class="row">
-	  <div class="col-md-6">
-	  	<!-- 头像 -->
-	  	<span class="blod-font">最近战绩</span>
-	  </div>
-	  <div class="col-md-6">
-	  	<a href="" class="btn btn-primary">返回上一页</a>
-	  </div>
-
-	</div>
-	</div>
-
-
-	<!-- 账号列表 -->
-	<?php foreach($matchList['game_list'] ?: [] as $match){?>
-	<a href="<?=Url::to(['lol/match', 'user_id' => $account->user_id, 'match_id' => $match['game_id']])?>">
-	<div class="row-group">
-	<div class="row">
-	  <div class="col-md-2">
-	  	<!-- 头像 -->
-	  	<img src="<?=\common\models\LolAccount::getChampionAvatar($match['champion']['name'])?>" class="img-responsive img-rounded">
-	  </div>
-	  <div class="col-md-5">
-	  	<div class="row">
-		  <div class="col-md-12">
-			  <span class="normal-font">
-			  	<?=$match['champion']['display_name'] .'-'. $match['champion']['title']?>
-			  </span>
+		  <div class="col-md-2">
+		  	<img  class="img-responsive img-rounded" style="width:80px;" src="<?=$account['avatar']?>">
+		  </div>
+		  <div class="col-md-10">
+		  	<div class="row">
+			  <div class="col-md-12">
+			  	<span class="normal-font"><?=$account['server']?></span>
+			  </div>
+			</div>
+			<div class="row">
+			  <div class="col-md-3">
+			  	<span class="normal-font">隐藏分：<?=$account['hide_score']?></span>
+			  </div>
+			  <div class="col-md-3">
+			  	<span class="normal-font">段位：<?=$account['tier']?></span>
+			  </div>
+			  <div class="col-md-3">
+			  	<span class="normal-font">总场次：<?=$account['sum']?></span>
+			  </div>
+			</div>
+			<div class="row">
+			  <div class="col-md-3">
+			  	<span class="normal-font">胜场：<?=$account['win_sum']?></span>
+			  </div>
+			  <div class="col-md-3">
+			  	<span class="normal-font">负场：<?=$account['defeat_sum']?></span>
+			  </div>
+			  <div class="col-md-3">
+			  	<span class="normal-font">胜率：<?=$account['win_rate']?></span>
+			  </div>
+			</div>
 		  </div>
 		</div>
-
-		<div class="row">
-		  <div class="col-md-12">
-			  <span class="normal-font">
-			  	<?=date('Y-m-d H:i:s', $match['created'])?>
-			  </span>
-		  </div>
-		</div>
-
-		<div class="row">
-		  <div class="col-md-12">
-			  <span class="normal-font">
-			  	<?=$match['game_type']['name_cn']?>
-			  </span>
-		  </div>
-		</div>
-	  </div>
-
-	  <div class="col-md-1">
-	  	<span class="<?=$match['battle_result'] ? 'success-font' : 'fail-font'?>"><?=$match['battle_result'] ? '胜利' : '失败'?></span>
-	  </div>
-
 	</div>
-	</div>
-	</a>
-	<?php }?>
-	<!-- 账号列表 -->
 
+	<div class="row-group">
+		<div class="row">
+		  <div class="col-md-5">
+		  	<span class="blod-font">最近战绩</span>
+		  </div>
+		  <div class="col-md-5">
+		  	<a href="<?=Url::to(['lol/search', 'name' => $name])?>" class="btn btn-primary btn-lg ">返回上一页</a>
+		  </div>
+		  
+		</div>
+	</div>
+
+<?php
+$resultArray = [
+	'失败' => '胜利',
+	'胜利' => '失败'
+];
+?>
+
+	<div class="row-group">
+		<?php foreach($account['match_list'] ?: [] as $match){
+				$randKey = uniqid() . rand(0, 1000);
+			?>
+		<div class="match">
+			<div class="row">
+			  <div class="col-md-2">
+			  	<img  class="img-responsive img-rounded" style="width:60px;" src="<?=$match['avatar']?>">
+			  </div>
+			  <div class="col-md-6">
+			  	<div class="row">
+				  <div class="col-md-12">
+				  	<span class="normal-font">模式：<?=$match['type']?> 战斗结果：<?=$match['result']?></span>
+				  </div>
+				</div>
+				<div class="row">
+				  <div class="col-md-12">
+				  	<span class="normal-font">时间：<?=$match['time']?></span>
+				  </div>
+				</div>
+				<div class="row">
+				  <div class="col-md-12">
+				  	<span class="normal-font">击杀：<?=$match['kill']?> 死亡：<?=$match['death']?> 助攻：<?=$match['assist']?></span>
+				  </div>
+				</div>
+			  </div>
+			  <div class="col-md-4">
+			  	<div class="row">
+				  <div class="col-md-12">
+				  </div>
+				</div>
+				<div class="row">
+				  <div class="col-md-12">
+				  	<button type="button" matchkey="<?=$randKey?>" class="btn btn-primary btn-lg btn-block match-detail-button">详情</button>
+				  </div>
+				</div>
+				<div class="row">
+				  <div class="col-md-12">
+				  </div>
+				</div>
+			  </div>
+			</div>
+
+			<div class="match-detail" id="match-detail-<?=$randKey?>" style="display:none;">
+				<div class="row">
+				  <div class="col-md-12">
+				  <span class="blod-font">我方<?=$match['result']?></span>
+				  </div>
+				</div>
+				<?php foreach($match['our'] ?: [] as $m){?>
+				<div class="row">
+				  <div class="col-md-2">
+				  <img  class="img-responsive img-rounded" style="width:60px;" src="<?=$m['avatar']?>">
+				  </div>
+				  <div class="col-md-1">
+				  <?php foreach($m['spell'] ?: [] as $sp){?>
+				  	<div class="row">
+					  <img  class="img-responsive img-rounded" style="width:30px;" src="<?=$sp?>">
+					</div>
+				  <?php }?>
+				  </div>
+				  <div class="col-md-3">
+				  <?php
+				  	$equipList = array_chunk($m['equip_icon'], 3);
+				  	foreach($equipList ?: [] as $clist){
+				  ?>
+				  	<div class="row">
+				  	<?php foreach($clist ?: [] as $e){?>
+					  <div class="col-md-4">
+					  <img  class="img-responsive img-rounded" style="width:30px;" src="<?=$e?>">
+					  </div>
+					  <?php }?>
+					</div>
+				  <?php }?>
+				  </div>
+				  <div class="col-md-5">
+				  	<div class="row">
+					  <div class="col-md-12">
+					  <span class="normal-font">KDA：<?=$m['kill']?>/<?=$m['death']?>/<?=$m['assist']?></span>
+					  </div>
+					</div>
+					<div class="row">
+					  <div class="col-md-12">
+					  <span class="normal-font">输出：<?=$m['export']?></span>
+					  </div>
+					</div>
+					<div class="row">
+					  <div class="col-md-12">
+					  <span class="normal-font">经济：<?=$m['gold']?></span>
+					  </div>
+					</div>
+				  </div>
+				</div>
+				<?php }?>
+
+				<div class="row">
+				  <div class="col-md-12">
+				  <span class="blod-font">敌方<?=$resultArray[$match['result']]?></span>
+				  </div>
+				</div>
+				<?php foreach($match['enemy'] ?: [] as $m){?>
+				<div class="row">
+				  <div class="col-md-2">
+				  <img  class="img-responsive img-rounded" style="width:60px;" src="<?=$m['avatar']?>">
+				  </div>
+				  <div class="col-md-1">
+				  <?php foreach($m['spell'] ?: [] as $sp){?>
+				  	<div class="row">
+					  <img  class="img-responsive img-rounded" style="width:30px;" src="<?=$sp?>">
+					</div>
+				  <?php }?>
+				  </div>
+				  <div class="col-md-3">
+				  <?php
+				  	$equipList = array_chunk($m['equip_icon'], 3);
+				  	foreach($equipList ?: [] as $clist){
+				  ?>
+				  	<div class="row">
+				  	<?php foreach($clist ?: [] as $e){?>
+					  <div class="col-md-4">
+					  <img  class="img-responsive img-rounded" style="width:30px;" src="<?=$e?>">
+					  </div>
+					  <?php }?>
+					</div>
+				  <?php }?>
+				  </div>
+				  <div class="col-md-5">
+				  	<div class="row">
+					  <div class="col-md-12">
+					  <span class="normal-font">KDA：<?=$m['kill']?>/<?=$m['death']?>/<?=$m['assist']?></span>
+					  </div>
+					</div>
+					<div class="row">
+					  <div class="col-md-12">
+					  <span class="normal-font">输出：<?=$m['export']?></span>
+					  </div>
+					</div>
+					<div class="row">
+					  <div class="col-md-12">
+					  <span class="normal-font">经济：<?=$m['gold']?></span>
+					  </div>
+					</div>
+				  </div>
+				</div>
+				<?php }?>
+
+			</div>
+
+		</div>
+		<?php }?>
+	</div>
+
+	
 </div>
+
+
+
+

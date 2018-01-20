@@ -123,6 +123,7 @@ class OwCrawler extends CrawlerBase implements CrawlerInterface {
             }
         }
 
+        return $account;
         var_dump($account);die;
 
     }

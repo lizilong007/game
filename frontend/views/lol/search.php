@@ -12,43 +12,33 @@ use yii\helpers\Url;
 
 	<div class="row">
 	  <div class="col-md-3"><span class="blod-font">游戏名</span></div>
-	  <div class="col-md-3"><span class="blod-font">英雄联盟</span></div>
+	  <div class="col-md-3"><span class="blod-font"><?=$gameName?></span></div>
 	</div>
 
 	<div class="row">
-	  <div class="col-md-3"><span class="blod-font">用户名/游戏ID</span></div>
+	  <div class="col-md-3"><span class="blod-font">游戏名/游戏ID</span></div>
 	  <div class="col-md-3"><span class="blod-font"><?=$name?></span></div>
 	</div>
+
 	</div>
 	<!-- 头部简要信息结束 -->
-
-	<!-- 账号列表 -->
-	<?php foreach($accountList['player_list'] ?: [] as $player){?>
 	<div class="row-group">
+	<?php foreach($account ?: [] as $acc){?>
 	<div class="row">
 	  <div class="col-md-2">
-	  	<!-- 头像 -->
-	  	<img src="<?=\common\models\LolAccount::getAvatar($player['icon'])?>" class="img-responsive img-rounded">
+	  	<img  class="img-responsive img-rounded" style="width:80px;" src="<?=$acc['avatar']?>">
 	  </div>
 	  <div class="col-md-5">
-	  	<div class="row">
-		  <div class="col-md-6"><span class="normal-font"><?=$player['game_zone']['server_name'] .' '. $player['game_zone']['alias']?></span></div>
-		  <div class="col-md-6"><span class="normal-font">等级：<?=$player['level']?></span></div>
-		</div>
-
-		<div class="row">
-		  <div class="col-md-6"><span class="normal-font">隐藏分：<?=$player['box_score']?></span></div>
-		  <div class="col-md-6"><span class="normal-font">段位：<?=$player['tier_rank']['tier']['name_cn'] . $player['tier_rank']['rank']['name'] ?: '无段位'?></span></div>
-		</div>
+	  	<span class="normal-font"><?=$acc['server']?></span>
 	  </div>
-
-	  <div class="col-md-5">
-	  	<a href="<?=Url::to(['lol/index', 'user_id' => $player['user_id']])?>" class="btn btn-default btn-lg">详情</a>
+	  <div class="col-md-3">
+	  	<a href="<?=Url::to(['lol/index', 'accountId' => $acc['accountId'], 'name' => $name])?>" class="btn btn-primary btn-lg btn-block">详情</a>
 	  </div>
-
-	</div>
 	</div>
 	<?php }?>
-	<!-- 账号列表 -->
+	</div>
+
+	
+	
 
 </div>

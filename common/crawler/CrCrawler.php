@@ -31,8 +31,8 @@ class CrCrawler extends CrawlerBase implements CrawlerInterface {
 
         $data = [];
 
-        // $content = $this->vget($this->indexUrl($name));
-        $content = file_get_contents(__DIR__ . '/_crindex.html');
+        $content = $this->vget($this->indexUrl($name));
+        // $content = file_get_contents(__DIR__ . '/_crindex.html');
 
         if(empty($content))
         {
@@ -54,7 +54,7 @@ class CrCrawler extends CrawlerBase implements CrawlerInterface {
             'Trophies' => '奖杯总数',
             'Highest Trophies' => '最高奖杯数',
             'Rank' => ' 排名',
-            'Ladder 1v1 wins' => '天梯1V1胜利次数',
+            'Ladder 1v1 Wins' => '天梯1V1胜利次数',
             'Ladder 1v1 Losses' => '天梯1V1失败次数',
             'Ladder 1v1 Draws + 2v2 Games' => '天梯1V1/2V2平手次数',
             'Total Ladder Games' => '总天梯对战次数',
@@ -63,12 +63,13 @@ class CrCrawler extends CrawlerBase implements CrawlerInterface {
             'Three Crown Wins on Ladder + Challenges' => '天梯三冠挑战次数',
             'Min. Time Spent on Ladder' => '天梯最小时间花费',
             'Challenge Max Wins' => '最大连胜次数',
-            'Challenge Cards Won ' => '获得卡牌数',
+            'Challenge Cards Won' => '获得卡牌数',
             'Tourney Games Played' => '锦标赛参赛次数',
-            'Tourney Cards Won' => ' 锦标赛获得卡牌数',
+            'Tourney Cards Won' => '锦标赛获得卡牌数',
             'Cards Found' => '卡牌发现数',
             'Total Donations' => '总捐献数',
             'Level' => '等级',
+            'League 7' => '联盟'
         ];
 
         $stats = $crawler->filter('.ui.four.stackable.doubling.cards .card')->each(function($node, $index) use ($keysName){
@@ -78,6 +79,7 @@ class CrCrawler extends CrawlerBase implements CrawlerInterface {
             return [
                 'name' => $keysName[$key],
                 'value' => $value,
+                'key' => $key
             ];
         });
 
@@ -105,6 +107,8 @@ class CrCrawler extends CrawlerBase implements CrawlerInterface {
             return [
                 'icon' => 'https://cr-api.com' . trim($node->filter('div.player_card img')->first()->attr('src')),
                 'upgrades' => trim($node->filter('div.card_upgrades')->first()->text()),
+                'level' => trim($node->filter('div.cardlevel')->first()->text()),
+                'card_progress_container' => trim($node->filter('div.card_progress_container')->first()->html()),
             ];
         });
 
