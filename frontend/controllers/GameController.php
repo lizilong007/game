@@ -44,7 +44,7 @@ class GameController extends Controller
                     $this->redirect(['psn/search', 'name' => $name]);
                     break;
                 case CrawlerBase::STEAM:
-                    $this->redirect(['psn/search', 'name' => $name]);
+                    $this->redirect(['steam/search', 'name' => $name]);
                     break;
                 case CrawlerBase::COC:
                     $this->redirect(['coc/search', 'name' => $name]);

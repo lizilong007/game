@@ -193,7 +193,7 @@ class PubgCrawler extends CrawlerBase implements CrawlerInterface {
     }
 
     private function buildUrl($name) {
-        return $this->_baseUrl . $name;
+        return $this->_baseUrl . urlencode($name);
     }
 
     private function rankUrl($user_id, $server, $size)

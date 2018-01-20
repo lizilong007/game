@@ -109,12 +109,76 @@ class D3Controller extends Controller
         });
 
         // stats 全部保留
+        $heroData = $hero;
+        $hero = [];
+        $hero = [
+            'skills' => [
+                // 名称 等级 介绍
+                'active' => [],
+                'passive' => []
+            ],
+            // 名称 等级 介绍
+            'rune' => [],
+            // 部位 名称
+            'items' => [],
+            // 卡耐魔盒
+            'legendaryPowers' => [],
+            // stats
+            'stats' => []
+        ];
 
-        $heroJson = addcslashes(json_encode($hero), "\n");
+        foreach($heroData['skills']['active'] ?: [] as $skill)
+        {
+            if($skill['skill'])
+            {
+                $hero['skills']['active'][] = [
+                    'name' => $skill['skill']['name'],
+                    'level' => $skill['skill']['level'],
+                    'description' => $skill['skill']['description'],
+                ];
+            }
+            if($skill['rune'])
+            {
+                $hero['rune'][] = [
+                    'name' => $skill['rune']['name'],
+                    'level' => $skill['rune']['level'],
+                    'description' => $skill['rune']['description'],
+                ];
+            }
+        }
 
-        $this->view->registerJs("var str = '".$heroJson."';resultStr = str.replace(/[\\r\\n]/g, '');var data = JSON.parse(resultStr);$('#json-renderer').jsonViewer(data, {collapsed: false, withQuotes: true});", View::POS_READY);
+        foreach($heroData['skills']['passive'] ?: [] as $skill)
+        {
+            if($skill['skill'])
+            {
+                $hero['skills']['passive'][] = [
+                    'name' => $skill['skill']['name'],
+                    'level' => $skill['skill']['level'],
+                    'description' => $skill['skill']['description'],
+                ];
+            }
+        }
 
-        $this->view->registerCssFile('@web/js/jquery.json-viewer/json-viewer/jquery.json-viewer.css');
+        foreach($heroData['items'] ?: [] as $itemKey => $item)
+        {
+            $hero['items'][] = [
+                'position' => $itemKey,
+                'name' => $item['name'],
+            ];
+        }
+
+        foreach($heroData['legendaryPowers'] ?: [] as $power)
+        {
+            $hero['legendaryPowers'][] = $power['name'];
+        }
+
+        $hero['stats'] = $heroData['stats'];
+
+        // $heroJson = addcslashes(json_encode($hero), "\n");
+
+        // $this->view->registerJs("var str = '".$heroJson."';resultStr = str.replace(/[\\r\\n]/g, '');var data = JSON.parse(resultStr);$('#json-renderer').jsonViewer(data, {collapsed: false, withQuotes: true});", View::POS_READY);
+
+        // $this->view->registerCssFile('@web/js/jquery.json-viewer/json-viewer/jquery.json-viewer.css');
 
         return $this->render('hero', ['hero' => $hero , 'name' => $name]);
     }

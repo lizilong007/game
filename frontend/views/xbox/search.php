@@ -52,9 +52,9 @@ use yii\helpers\Url;
 		<?foreach($account['recent'] ?: [] as $game){?>
 		<div class="row">
 		  <div class="col-md-5">
-		  	<img  class="img-responsive img-rounded" style="width: 200px;height: 100px;" src="<?=$game['contentImageUri']?>">
+		  	<img  class="img-responsive img-rounded" style="width: 100px;height: 100px;" src="<?=$game['contentImageUri']?>">
 		  </div>
-		  <div class="col-md-7">
+		  <div class="col-md-7" style="    padding-top: 2rem;">
 		  	<span class="normal-font"><?=$game['contentTitle']?></span>
 		  </div>
 		</div>

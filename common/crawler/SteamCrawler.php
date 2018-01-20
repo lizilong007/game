@@ -78,7 +78,7 @@ class SteamCrawler extends CrawlerBase implements CrawlerInterface {
         $account['steamid'] = $user['steamid'];
         $account['timecreated'] = $user['timecreated'];
         $account['lastlogoff'] = $user['lastlogoff'];
-        $account['avatar'] = $user['avatar'];
+        $account['avatar'] = $user['avatarfull'];
         $account['personaname'] = $user['personaname'];
 
         $level = json_decode($this->getContent($this->levelUrl($steamId)), true);

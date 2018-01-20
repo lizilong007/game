@@ -48,6 +48,7 @@ class CocCrawler extends CrawlerBase implements CrawlerInterface {
 
     public function search($name)
     {
+        $name = $this->handleName($name);
         $url = $this->searchUrl($name);
         $client = new \GuzzleHttp\Client();
         try {
@@ -65,6 +66,11 @@ class CocCrawler extends CrawlerBase implements CrawlerInterface {
             var_dump($e->getMessage());
             return null;
         }
+    }
+
+    private function handleName($name)
+    {
+        return '#' . str_replace(['#', '＃'], '', $name);
     }
 
 

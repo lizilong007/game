@@ -6,6 +6,7 @@ use yii\console\Controller;
 
 use common\models\PubgCompre;
 use common\crawler\PubgCrawler;
+use common\models\PubgUpdate;
 
 use common\crawler\PsnCrawler;
 use common\crawler\CocCrawler;
@@ -14,7 +15,9 @@ use common\crawler\CrCrawler;
 use common\crawler\XboxCrawler;
 use common\crawler\OwCrawler;
 use common\crawler\LolDogCrawler;
-use common\models\PubgUpdate;
+use common\crawler\D3Crawler;
+use common\crawler\CsgoCrawler;
+use common\crawler\Dota2Crawler;
 
 class PubgController extends Controller
 {
@@ -46,13 +49,43 @@ class PubgController extends Controller
         
     }
 
-    public function actionCrawler(){
+    public function actionPubg(){
 
 //        $user = PubgCompre::find()->andWhere(['id' => 1])->one();
 
         $crawler = new PubgCrawler;
 
-        var_dump($crawler->make('BABABABA1'));die;
+        var_dump($crawler->make('霜龙骑士'));die;
+
+    }
+
+    public function actionD3(){
+
+//        $user = PubgCompre::find()->andWhere(['id' => 1])->one();
+
+        $crawler = new D3Crawler;
+
+        var_dump($crawler->account('霜龙骑士-5626'));die;
+
+    }
+
+    public function actionCsgo(){
+
+//        $user = PubgCompre::find()->andWhere(['id' => 1])->one();
+
+        $crawler = new CsgoCrawler;
+
+        var_dump($crawler->search('76561198134713498'));die;
+
+    }
+
+    public function actionDota2(){
+
+//        $user = PubgCompre::find()->andWhere(['id' => 1])->one();
+
+        $crawler = new Dota2Crawler;
+
+        var_dump($crawler->search('129529499'));die;
 
     }
 
