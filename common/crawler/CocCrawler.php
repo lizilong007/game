@@ -8,9 +8,10 @@ use common\helper\NumberHelper;
 class CocCrawler extends CrawlerBase implements CrawlerInterface {
 
     // https://api.clashofclans.com/v1/players/%23V8RJJGYR
+    // https://developer.clashofclans.com
     // curl -X GET --header 'Accept: application/json' --header "authorization: Bearer <API token>" 'https://api.clashofclans.com/v1/players/%23V8RJJGYR'
     private $_baseUrl = 'https://api.clashofclans.com/v1/players/';
-    private $_token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiIsImtpZCI6IjI4YTMxOGY3LTAwMDAtYTFlYi03ZmExLTJjNzQzM2M2Y2NhNSJ9.eyJpc3MiOiJzdXBlcmNlbGwiLCJhdWQiOiJzdXBlcmNlbGw6Z2FtZWFwaSIsImp0aSI6IjUzODhiM2UxLWQyZTEtNDhiYS04Mjg5LTIxMmUwMDc5YjkyOSIsImlhdCI6MTUxNjE5NTQxOCwic3ViIjoiZGV2ZWxvcGVyLzhiM2Y2MThkLTc5NGMtY2VhYi03N2ZjLTkzYTY2NzVjZmUxZCIsInNjb3BlcyI6WyJjbGFzaCJdLCJsaW1pdHMiOlt7InRpZXIiOiJkZXZlbG9wZXIvc2lsdmVyIiwidHlwZSI6InRocm90dGxpbmcifSx7ImNpZHJzIjpbIjEzOS4yMjYuMTUyLjI4IiwiMTE2LjYyLjExOS4yNDYiXSwidHlwZSI6ImNsaWVudCJ9XX0.fpjj2HQvnf_653QNwLevr4g2wN9vG-gL67xndss0cg7i2NaaKbTmecTmWphAP1cbp4_S6EZxoA6uRXpViKQmjA';
+    private $_token = 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiIsImtpZCI6IjI4YTMxOGY3LTAwMDAtYTFlYi03ZmExLTJjNzQzM2M2Y2NhNSJ9.eyJpc3MiOiJzdXBlcmNlbGwiLCJhdWQiOiJzdXBlcmNlbGw6Z2FtZWFwaSIsImp0aSI6ImFlMDUwZjZjLTc0NTEtNDNjZi04OWEyLTliNDQxNDRkNDQwMiIsImlhdCI6MTUxNjQ1OTA2OSwic3ViIjoiZGV2ZWxvcGVyLzhiM2Y2MThkLTc5NGMtY2VhYi03N2ZjLTkzYTY2NzVjZmUxZCIsInNjb3BlcyI6WyJjbGFzaCJdLCJsaW1pdHMiOlt7InRpZXIiOiJkZXZlbG9wZXIvc2lsdmVyIiwidHlwZSI6InRocm90dGxpbmcifSx7ImNpZHJzIjpbIjEzOS4yMjYuMTUyLjI4IiwiMTE2LjYyLjExOS4yNDYiLCIxNjMuNDQuMTcwLjE3OCJdLCJ0eXBlIjoiY2xpZW50In1dfQ.2w5OohIrAZwH4qdtJpBqw44qU4SaxdEFBE5dmCWvT_I8afcAAMOhA66WF63lhaP6ynNCNNPMMr0WxzyVvemZCw';
 
     public function make($name) {
 
