@@ -14,6 +14,12 @@ use common\crawler\CrawlerBase;
  */
 class GameController extends Controller
 {
+    public function actionError()
+    {
+        $this->layout = 'default.php';
+        $this->view->title = '号角个人游戏数据查询系统 - 内部版';
+        return $this->render('error');
+    }
     // 搜索
     public function actionSearch()
     {

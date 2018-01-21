@@ -36,9 +36,10 @@ class LolController extends Controller
         $this->view->title = '号角个人游戏数据查询系统 - 内部版';
         $accountId = \Yii::$app->request->get('accountId');
         $name = \Yii::$app->request->get('name');
+        $area = \Yii::$app->request->get('area');
 
         $crawler = new LolDogCrawler;
-        $account = $crawler->account($accountId, $name);
+        $account = $crawler->account($accountId, $name, 1, $area);
 
         $this->view->registerJs('$(function(){
         $(".match-detail-button").click(function() {

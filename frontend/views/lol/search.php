@@ -32,7 +32,7 @@ use yii\helpers\Url;
 	  	<span class="normal-font"><?=$acc['server']?></span>
 	  </div>
 	  <div class="col-md-3">
-	  	<a href="<?=Url::to(['lol/index', 'accountId' => $acc['accountId'], 'name' => $name])?>" class="btn btn-primary btn-lg btn-block">详情</a>
+	  	<a href="<?=Url::to(['lol/index', 'accountId' => $acc['accountId'], 'name' => $name, 'area' => $acc['server']])?>" class="btn btn-primary btn-lg btn-block">详情</a>
 	  </div>
 	</div>
 	<?php }?>

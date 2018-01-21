@@ -15,6 +15,7 @@ use common\crawler\CrCrawler;
 use common\crawler\XboxCrawler;
 use common\crawler\OwCrawler;
 use common\crawler\LolDogCrawler;
+use common\crawler\LolCrawler;
 use common\crawler\D3Crawler;
 use common\crawler\CsgoCrawler;
 use common\crawler\Dota2Crawler;
@@ -168,6 +169,16 @@ class PubgController extends Controller
         var_dump(json_encode($crawler->account(9101001518416, '霜龙骑士')));die;
 
         var_dump($crawler->search('霜龙骑士'));die;
+
+    }
+
+    public function actionLol(){
+
+//      $user = PubgCompre::find()->andWhere(['id' => 1])->one();
+
+        $crawler = new LolCrawler;
+
+        var_dump(json_encode($crawler->search('魔鬼终结使者', '艾欧尼亚')));die;
 
     }
 

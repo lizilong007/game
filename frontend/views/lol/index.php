@@ -65,7 +65,7 @@ use yii\helpers\Url;
 		  	<span class="blod-font">最近战绩</span>
 		  </div>
 		  <div class="col-md-5">
-		  	<a href="<?=Url::to(['lol/search', 'name' => $name])?>" class="btn btn-primary btn-lg ">返回上一页</a>
+		  	<a href="<?=Url::to(['lol/search', 'name' => $name])?>" class="btn btn-default btn-lg ">返回上一页</a>
 		  </div>
 		  
 		</div>
