@@ -14,6 +14,8 @@ use common\crawler\CrawlerBase;
  */
 class GameController extends Controller
 {
+    public $defaultAction = 'search';
+    
     public function actionError()
     {
         $this->layout = 'default.php';
