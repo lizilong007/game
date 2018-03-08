@@ -22,9 +22,13 @@ class LolController extends Controller
         $this->layout = 'default.php';
         $this->view->title = '号角个人游戏数据查询系统 - 内部版';
         $name = \Yii::$app->request->get('name');
-
-        $crawler = new LolDogCrawler;
-        $account = $crawler->search($name);
+        try {
+            $crawler = new LolDogCrawler;
+            $account = $crawler->search($name);
+        } catch (\Exception $e) {
+            return $this->redirect(['game/error']);
+        }
+        
 
         return $this->render('search', ['account' => $account , 'name' => $name, 'gameId' => $gameId, 'gameName' => \common\crawler\CrawlerBase::$games[$gameId]]);
     }
@@ -38,8 +42,14 @@ class LolController extends Controller
         $name = \Yii::$app->request->get('name');
         $area = \Yii::$app->request->get('area');
 
-        $crawler = new LolDogCrawler;
-        $account = $crawler->account($accountId, $name, 1, $area);
+        try {
+            $crawler = new LolDogCrawler;
+            $account = $crawler->account($accountId, $name, 1, $area);
+        } catch (\Exception $e) {
+            return $this->redirect(['game/error']);
+        }
+
+        
 
         $this->view->registerJs('$(function(){
         $(".match-detail-button").click(function() {

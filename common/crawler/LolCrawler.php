@@ -4,6 +4,7 @@ namespace common\crawler;
 error_reporting(0);
 
 use common\helper\NumberHelper;
+use yii\web\NotFoundHttpException;
 
 class LolCrawler extends CrawlerBase implements CrawlerInterface {
 
@@ -32,7 +33,7 @@ class LolCrawler extends CrawlerBase implements CrawlerInterface {
         }
         if(empty($searchUser))
         {
-            throw new CrawlerException(CrawlerException::CRAWLER_NOT_FOUND_CONTENT, "$name, $area");
+            throw new NotFoundHttpException("$name, $area, 未找到");
         }
 
         $user_id = $searchUser['user_id'];
@@ -62,7 +63,12 @@ class LolCrawler extends CrawlerBase implements CrawlerInterface {
             $temp['assist'] = 0;
             $temp['avatar'] = 'http://static.lolbox.duowan.com/images/champions/'.$recent['champion']['name'].'_40x40.jpg';
 
-            $detail = $this->matchDetail($area_id, $user_id, $gameId);
+            try {
+                $detail = $this->matchDetail($area_id, $user_id, $gameId);
+            } catch (\Exception $e) {
+                continue;
+            }
+            
 
             if(empty($detail['player_game_list']))
             {
